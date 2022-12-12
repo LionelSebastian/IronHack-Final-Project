@@ -1,17 +1,20 @@
 
   <template>
-    Dashboard.vue
-    <footer/>
+    <navbar/>
+    SOY EL DASHBOARD
+    <foot/>
   </template>
   
   <script>
-  import footer from '../components/footer.vue'
   import { mapStores } from "pinia"
   import userStore from '../stores/user'
+
+  import foot from '../components/foot.vue'
+  import Navbar from '../components/navbar.vue'
   
   export default{
 
-    components: footer,
+    components: { foot, Navbar },
 
     computed:{
       ...mapStores(userStore)

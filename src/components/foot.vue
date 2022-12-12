@@ -1,6 +1,8 @@
 
   <template>
-   Footer.Vue
+    <div>
+    <RouterLink to="/">SOY EL FOOTER:::Go to Auth</RouterLink>
+    </div>
   </template>
   
   <script>
