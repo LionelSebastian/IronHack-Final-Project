@@ -1,7 +1,8 @@
 
   <template>
     <div>
-     SOY EL FOOTER  
+     SOY UNA TAREA  
+     <RouterLink to="/Dashboard"><button>DASHBOARD</button></RouterLink>
     </div>
   </template>
   

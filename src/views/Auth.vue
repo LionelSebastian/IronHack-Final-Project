@@ -1,6 +1,7 @@
  <template>
     <navbar/>
-    <RouterLink to="/Dashboard">Soy AUTH PAGE:::Go to Dashboard</RouterLink>
+    SOY AUTH PAGE:::
+    <RouterLink to="/Dashboard">Go to Dashboard</RouterLink>
     <foot/>
 </template>
     
