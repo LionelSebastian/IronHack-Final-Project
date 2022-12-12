@@ -1,7 +1,5 @@
-//store/useSSRContext.js//
 
 import { defineStore } from "pinia";
-import { useSSRContext } from "vue";
 
 import { supabase } from "../supabase";
 
@@ -31,21 +29,14 @@ export default defineStore("user", {
 
     },
 
-    async signUp(email, password) {
-
-      const { user, error } = await supabase.auth.signUp({
-
+  async signup(email, password){
+      const{data, error} =await supabase.auth.signUp({
         email: email,
-
         password: password,
-
       });
-
       if (error) throw error;
-
-      if (user) this.user = user;
-
-    },
+      if(data) this.user = data.user;
+  },
 
     persist: {
 
