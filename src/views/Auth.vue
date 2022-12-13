@@ -1,6 +1,12 @@
  <template>
     <navbar/>
-    SOY AUTH PAGE:::
+   AUTENTICATE
+    <form @submit.prevent = "login()" >
+        <input type="email" v-model="user">
+        <input type="text" v-model="password">
+        <button type="submit">ENTER</button>
+    </form>
+ 
     <RouterLink to="/Dashboard">Go to Dashboard</RouterLink>
     <foot/>
 </template>
@@ -15,14 +21,19 @@ import foot from '../components/foot.vue'
 
 
 export default{
-    components: { navbar, foot },
+    components: {navbar, foot},
     computed:{
       ...mapStores(userStore)
      },
-
+     data:{
+        return :{
+            user: null,
+            password: null,
+        }
+     },
     methods:{
      login(){
-        this.userStore.signUp()
+        this.userStore.signUp(this.user, this.password);
      }   
 
     },
