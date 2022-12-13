@@ -25,8 +25,8 @@ export default{
     computed:{
       ...mapStores(userStore)
      },
-     data:{
-        return :{
+     data(){
+        return {
             user: null,
             password: null,
         }
