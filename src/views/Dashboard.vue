@@ -1,40 +1,24 @@
+<template>
+  SOY EL DASHBOARD:::
+  <RouterLink to="/">Sign Out</RouterLink>
+  <RouterView />
+  <foot />
+</template>
 
-  <template>
-    <navbar/>
-    SOY EL DASHBOARD:::
-    <RouterLink to="/">Sign Out</RouterLink>
-    <RouterView/>
-    <foot/>
-  </template>
-  
-  <script>
-  import { mapStores } from "pinia"
-  import userStore from '../stores/user'
-  import { RouterLink, RouterView} from 'vue-router'
+<script>
 
-  import foot from '../components/foot.vue'
-  import navbar from '../components/navbar.vue'
-  
-  export default{
+export default {
+  data(){
 
-    components: {foot, navbar},
+  },
+  methods:{
+    createTask(){
 
-    computed:{
-      ...mapStores(userStore)
-     },
-
-    methods:{
-     login(){
-        this.userStore.signUp()
-     }   
-
-    },
-
+    }
   }
-  </script>
-  
-  
-  <style scoped>
-  
-  </style>
-  
+}
+console.log(this.user.id)
+</script>
+
+
+<style scoped></style>

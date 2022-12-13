@@ -1,10 +1,7 @@
-
 import { defineStore } from "pinia";
 import { supabase } from "../supabase";
 
-console.log (supabase);
-
-
+console.log(supabase);
 
 export default defineStore("user", {
   state() {
@@ -19,28 +16,33 @@ export default defineStore("user", {
       this.user = user;
     },
 
-  async signUp(user, password){
-    //respone maybe better in the begining
-      const{data, error} =await supabase.auth.signUp({
+    async signUp(user, password) {
+      //respone maybe better in the begining
+      const { data, error } = await supabase.auth.signUp({
         email: user,
         password: password,
       });
       if (error) throw error;
-      if(data) this.user = data.user;
+      // if(data) this.user = data.user;
       //this$router.push("/"); cambiar de ruta
-  },
-
-    persist: {
-      enabled: true,
-      strategies: [
-        {
-          key: "user",
-          storage: localStorage,
-        },
-      ],
     },
 
+    async signIn(user, password) {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: user,
+        password: password,
+      });
+      if (error) throw error;
+      if (data) this.user = data.user;
+    },
   },
-
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: "user",
+        storage: localStorage,
+      },
+    ],
+  },
 });
-
