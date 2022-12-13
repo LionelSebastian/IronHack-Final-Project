@@ -19,7 +19,7 @@ export default defineStore("user", {
 
   async signUp(user, password){
     //respone maybe better in the begining
-      const{data, error} =await supabase.auth.signUp({
+      const{data, error}=await supabase.auth.signUp({
         email: user,
         password: password,
       });
