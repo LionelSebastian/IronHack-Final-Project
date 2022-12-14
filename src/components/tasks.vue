@@ -15,7 +15,11 @@
         <tbody>
           <tr>
             <th>  {{ userStore.user.email }} </th>         
-            <th><div v-for="(task, index) in tasksStore.tasks"> {{ tasksStore.tasks[index].title }}</div></th>
+            <th>
+              <ul v-for="(task) in tasksStore.tasks"> 
+                <li v-if="taks.status == 1 ">{{ task.title }}></li>
+              </ul>
+            </th>
             <th>aca irian status 2</th>
             <th>Aca irian status 3</th>
             <th> {{ tasksStore.tasks }}</th>

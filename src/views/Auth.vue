@@ -1,14 +1,22 @@
 <template>
     <navbar/>
-    Autenticate
-    <form @submit.prevent = "login()" >
+  
+    <body class="text-center">  
+
+    <h1 class="p-7">Autenticate o registrate</h1>
+
+    <form class ="mx-auto text-center" @submit.prevent = "login()" >
         <input type="email" placeholder="ingresa tu email" v-model="user" class="">
+        <br/>
         <input type="text" placeholder="ingresa password" v-model="password">
+        <br/>
         <button type="submit">ENTER</button>
     </form>
  
     <RouterLink to="/Dashboard">Go to Dashboard</RouterLink>
+    </body>
     <foot/>
+
 </template>
     
 <script>
@@ -41,6 +49,10 @@ export default{
 <style scoped>
     input{
         border: solid 2px black
+    }
+    button{
+        border: solid 2px black;
+        margin: 5px;
     }
 </style>
 
