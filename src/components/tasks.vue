@@ -1,5 +1,11 @@
   <template>
     <div>
+
+      <form @submit.prevent = "createNew()" >
+        <input type="text" placeholder="título" v-model="title" class="">
+        <button type="submit">CREATE</button>
+        <!-- <button @click="tasksStore.createTask(userStore.user.id,title,status)">CREATE</button> -->
+    </form>
       <table class="table-auto mx-auto border-solid bg-yellow">
 
         <thead>
@@ -16,9 +22,10 @@
           <tr>
             <th>  {{ userStore.user.email }} </th>         
             <th>
-              <ul v-for="(task) in tasksStore.tasks"> 
-                <li v-if="taks.status == 1 ">{{ task.title }}></li>
-              </ul>
+              <div v-for="(task) in tasksStore.tasks">   
+              {{ task.name }}
+                <!-- <li v-if=" taks.status === 1 "> {{ task.title }} </li> -->
+              </div>
             </th>
             <th>aca irian status 2</th>
             <th>Aca irian status 3</th>
@@ -38,17 +45,34 @@
   import userStore from '../stores/user'
   import tasksStore from '../stores/tasks'
   
-  export default{
-    
-    computed:{
-      ...mapStores(userStore, tasksStore)      
-     },
 
-  }
+  export default {
+  data(){
+    return{
+      user_id: null,
+      title: null, 
+      status:"1",
+    }
+  },
+  computed: {
+    ...mapStores(userStore, tasksStore),
+  },
+
+  // this.userStore.signIn(this.user, this.password);
+  methods: {
+    createNew() {
+      this.tasksStore.createTask(this.userStore.user.id, this.title, this.status)
+    },
+   },
+ };
+
   </script>
   
   
   <style scoped>
+  input{
+    border: 1px solid;
+  }
    table, th, td {
   border: 1px solid;
   }
