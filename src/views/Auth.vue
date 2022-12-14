@@ -8,7 +8,6 @@
     </form>
  
     <RouterLink to="/Dashboard">Go to Dashboard</RouterLink>
-    <foot/>
 </template>
     
 <script>
@@ -18,7 +17,6 @@ import userStore from '../stores/user'
 import navbar from '../components/navbar.vue';
 import foot from '../components/foot.vue'
 export default{
-    components: {navbar, foot},
     computed:{
       ...mapStores(userStore)
      },

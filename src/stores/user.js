@@ -1,10 +1,7 @@
-
 import { defineStore } from "pinia";
 import { supabase } from "../supabase";
 
-console.log (supabase);
-
-
+console.log(supabase);
 
 export default defineStore("user", {
   state() {

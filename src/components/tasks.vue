@@ -3,6 +3,7 @@
     <div>
      SOY UNA TAREA  
      <RouterLink to="/Dashboard"><button>DASHBOARD</button></RouterLink>
+    <button @click="submitTask"></button>
     </div>
   </template>
   
@@ -13,6 +14,7 @@
   import tasksStore from '../stores/tasks'
   
   export default{
+    
     computed:{
       ...mapStores(userStore, tasksStore)      
      },
