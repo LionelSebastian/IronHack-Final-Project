@@ -1,7 +1,6 @@
   <template>
-    <div>
-
-      <form @submit.prevent = "createNew()" >
+    <div class="text-center">
+      <form class="py-7" @submit.prevent = "createNew()" >
         <input type="text" placeholder="título" v-model="title" class="">
         <button type="submit">CREATE</button>
         <!-- <button @click="tasksStore.createTask(userStore.user.id,title,status)">CREATE</button> -->
@@ -23,8 +22,7 @@
             <th>  {{ userStore.user.email }} </th>         
             <th>
               <div v-for="(task) in tasksStore.tasks">   
-              {{ task.name }}
-                <!-- <li v-if=" taks.status === 1 "> {{ task.title }} </li> -->
+              {{ task.title}}
               </div>
             </th>
             <th>aca irian status 2</th>
