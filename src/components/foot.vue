@@ -1,19 +1,15 @@
 
   <template>
-    <div>
+    <div class="text-center">
      SOY EL FOOTER  
     </div>
   </template>
   
-  <script>
-  import { RouterLink} from 'vue-router'
-  
+  <script>  
   export default{
 
-
   }
-  </script>
-  
+  </script>  
   
   <style scoped>
   

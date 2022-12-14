@@ -1,12 +1,13 @@
 
   <template>
     <navbar/>
-    <h1>Soy el Dash board::: Hola user!!!</h1>
-    <button @click="tasksStore.fetchTasks">Fetch</button>
-    <RouterLink to="/">Sign Out</RouterLink>
-    <!-- <div> {{ userStore.user.name}} </div> -->   
-    <RouterView/>
-    <foot/>
+    <header class="flex justify-around pb-7">
+      <h1>Soy el Dash board::: Hola user!!!</h1>
+      <button class="border-button" @click="tasksStore.fetchTasks">Fetch</button>
+      <RouterLink to="/"> <button class="border-solid">Volver a Auth</button></RouterLink>
+   </header>  
+  <tasks/>
+  <foot/>
   </template>
   
   <script>
@@ -17,10 +18,11 @@
 
   import foot from '../components/foot.vue'
   import navbar from '../components/navbar.vue'
-  
+  import tasks from '../components/tasks.vue'
+
   export default{
 
-    components: {foot, navbar},
+    components: {foot, navbar, tasks},
     computed:{
       ...mapStores(userStore, tasksStore)
      },
@@ -34,6 +36,8 @@
   </script>  
   
   <style scoped>
-  
+  .button{
+    border:3px solid black,
+  } 
   </style>
   
