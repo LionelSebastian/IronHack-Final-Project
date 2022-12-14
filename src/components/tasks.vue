@@ -1,21 +1,22 @@
-  <template>
-    <div class="text-center">
-      <form class="py-7" @submit.prevent = "createNew()" >
-        <input type="text" placeholder="título" v-model="title" class="">
-        <button type="submit">CREATE</button>
-        <!-- <button @click="tasksStore.createTask(userStore.user.id,title,status)">CREATE</button> -->
+<template>
+  <div class="text-center">
+    <form class="py-7" @submit.prevent="createNew()">
+      <input type="text" placeholder="título" v-model="title" class="" />
+      <button type="submit">CREATE</button>
     </form>
-      <table class="table-auto mx-auto border-solid bg-yellow">
-
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>TODO</th>
-            <th>In Progress</th>
-            <th>COMPLETED</th>
-            <th>UTILITARIA</th>      
-          </tr>    
-        </thead>
+    <!-- <form class="py-7" @submit.prevent="updateCurrent()">
+      <button type="submit">UPDATE</button>
+    </form> -->
+    <table class="table-auto mx-auto border-solid bg-yellow">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>TODO</th>
+          <th>In Progress</th>
+          <th>COMPLETED</th>
+          <th>UTILITARIA</th>
+        </tr>
+      </thead>
 
         <tbody>
           <tr>
@@ -41,24 +42,22 @@
 
       </table>    
     <button @click="submitTask"></button>
-    </div>
-  </template>
-  
-  <script>
+  </div>
+</template>
 
-  import { mapStores } from "pinia"
+<script>
+import { mapStores } from "pinia";
 
-  import userStore from '../stores/user'
-  import tasksStore from '../stores/tasks'
-  
+import userStore from "../stores/user";
+import tasksStore from "../stores/tasks";
 
-  export default {
-  data(){
-    return{
+export default {
+  data() {
+    return {
       user_id: null,
-      title: null, 
-      status:"1",
-    }
+      title: null,
+      status: "1"
+    };
   },
   computed: {
     ...mapStores(userStore, tasksStore),
@@ -67,7 +66,16 @@
   // this.userStore.signIn(this.user, this.password);
   methods: {
     createNew() {
-      this.tasksStore.createTask(this.userStore.user.id, this.title, this.status)
+      this.tasksStore.createTask(
+        this.userStore.user.id,
+        this.title,
+        this.status
+      );
+    },
+    updateCurrent() {
+      this.tasksStore.updateTask(
+        this.status,
+        this.id);
     },
     filterByStatus(index){
 
@@ -85,6 +93,5 @@
   }
    table, th, td {
   border: 1px solid;
-  }
-  </style>
-  
+}
+</style>
