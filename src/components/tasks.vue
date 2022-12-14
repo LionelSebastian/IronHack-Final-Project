@@ -22,11 +22,19 @@
             <th>  {{ userStore.user.email }} </th>         
             <th>
               <div v-for="(task) in tasksStore.tasks">   
-              {{ task.title}}
-              </div>
+                <div v-if="task.status == 1" >
+                {{ task.title}}</div>
+                </div>
             </th>
-            <th>aca irian status 2</th>
-            <th>Aca irian status 3</th>
+            <th><div v-for="(task) in tasksStore.tasks">   
+                <div v-if="task.status == 2" >
+                {{ task.title}}</div>
+                </div>
+            </th>
+            <th><div v-for="(task) in tasksStore.tasks">   
+                <div v-if="task.status == 3" >
+                {{ task.title}}</div>
+                </div></th>
             <th> {{ tasksStore.tasks }}</th>
           </tr>
         </tbody>
@@ -61,6 +69,10 @@
     createNew() {
       this.tasksStore.createTask(this.userStore.user.id, this.title, this.status)
     },
+    filterByStatus(index){
+
+      this.tasksStore.tasks.filter()
+    }
    },
  };
 
