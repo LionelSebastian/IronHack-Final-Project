@@ -1,9 +1,9 @@
 <template>
     <navbar/>
-   AUTENTICATE
+    Autenticate
     <form @submit.prevent = "login()" >
-        <input type="email" v-model="user">
-        <input type="text" v-model="password">
+        <input type="email" placeholder="ingresa tu email" v-model="user" class="">
+        <input type="text" placeholder="ingresa password" v-model="password">
         <button type="submit">ENTER</button>
     </form>
  
@@ -30,7 +30,7 @@ export default{
      },
     methods:{
      login(){
-        this.userStore.signUp(this.user, this.password);
+        this.userStore.signIn(this.user, this.password);
      }   
     },
 }
@@ -38,6 +38,8 @@ export default{
     
     
 <style scoped>
-    
+    input{
+        border: solid 2px black
+    }
 </style>
 

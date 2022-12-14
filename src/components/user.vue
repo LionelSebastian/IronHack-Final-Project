@@ -14,13 +14,11 @@
   
   export default{
     computed:{
-      ...mapStores(userStore, tasksStore)
-      
+      ...mapStores(userStore, tasksStore)      
      },
-
   }
-  </script>
   
+  </script>  
   
   <style scoped>
   

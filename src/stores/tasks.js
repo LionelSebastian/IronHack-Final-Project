@@ -18,6 +18,7 @@ export default defineStore("tasks", {
         .select("*")
         .order("id", { ascending: false });
       this.tasks = tasks;
+      console.log(tasks)
     },
 
   },

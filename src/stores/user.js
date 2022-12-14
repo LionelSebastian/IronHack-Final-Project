@@ -25,22 +25,32 @@ export default defineStore("user", {
         email: user,
         password: password,
       });
+      if (error) throw error;      
+      console.log(data.user)
+      
+  },
+  async signIn(user, password){
+    //respone maybe better in the begining
+      const{data, error}=await supabase.auth.signInWithPassword({
+        email: user,
+        password: password,
+      });
       if (error) throw error;
       if(data) this.user = data.user;
+      console.log(data.user)
       //this$router.push("/"); cambiar de ruta
   },
 
-    persist: {
-      enabled: true,
-      strategies: [
-        {
-          key: "user",
-          storage: localStorage,
-        },
-      ],
-    },
-
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: "user",
+        storage: localStorage,
+      },
+    ],
   },
-
+ }
 });
+
 

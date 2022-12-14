@@ -15,7 +15,7 @@ const router = createRouter({
       path: "/Dashboard" ,
       component: Dashboard,
       children: [
-        { path: "",
+        { path: "/user",
           component: user,
         },
         { path: "/tasks",
