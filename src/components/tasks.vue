@@ -4,9 +4,7 @@
       <input type="text" placeholder="título" v-model="title" class="" />
       <button type="submit">CREATE</button>
     </form>
-    <!-- <form class="py-7" @submit.prevent="updateCurrent()">
-      <button type="submit">UPDATE</button>
-    </form> -->
+ 
     <table class="table-auto mx-auto border-solid bg-yellow">
       <thead>
         <tr>
@@ -22,20 +20,31 @@
           <tr>
             <th>  {{ userStore.user.email }} </th>         
             <th>
-              <div v-for="(task) in tasksStore.tasks">   
+              <div v-for="(task) in tasksStore.tasks">  
+
                 <div v-if="task.status == 1" >
-                {{ task.title}}</div>
+                {{ task.title}}              
+                <button @click="tasksStore.updateTask(2, task.id)">HACER</button>
                 </div>
+
+            </div>
+             
             </th>
             <th><div v-for="(task) in tasksStore.tasks">   
                 <div v-if="task.status == 2" >
-                {{ task.title}}</div>
+                {{ task.title}}
+                <button @click="tasksStore.updateTask(3, task.id)">HECHO</button>
+                </div>
                 </div>
             </th>
-            <th><div v-for="(task) in tasksStore.tasks">   
+            <th>
+              <div v-for="(task) in tasksStore.tasks">   
                 <div v-if="task.status == 3" >
-                {{ task.title}}</div>
-                </div></th>
+                {{ task.title}}                                
+                <button @click="borrar(task.id)">DELETE</button>
+                </div>
+              </div>
+            </th>
             <th> {{ tasksStore.tasks }}</th>
           </tr>
         </tbody>
@@ -63,7 +72,6 @@ export default {
     ...mapStores(userStore, tasksStore),
   },
 
-  // this.userStore.signIn(this.user, this.password);
   methods: {
     createNew() {
       this.tasksStore.createTask(
@@ -71,19 +79,28 @@ export default {
         this.title,
         this.status
       );
-    },
-    updateCurrent() {
+      this.fetch()
+     },
+
+     updateCurrent() {
       this.tasksStore.updateTask(
         this.status,
-        this.id);
-    },
-    filterByStatus(index){
-
-      this.tasksStore.tasks.filter()
+        this.id
+        );
+      },    
+      
+      fetch (){
+        this.tasksStore.fetchTasks()
+      },
+     borrar(id) {
+      this.tasksStore.deleteTask(id);
     }
-   },
- };
+  }, 
 
+   mounted(){
+       this.tasksStore.fetchTasks()
+ },
+ };
   </script>
   
   
@@ -92,6 +109,9 @@ export default {
     border: 1px solid;
   }
    table, th, td {
+  border: 1px solid;
+}
+button{
   border: 1px solid;
 }
 </style>

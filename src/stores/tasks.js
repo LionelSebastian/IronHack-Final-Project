@@ -28,5 +28,11 @@ export default defineStore("tasks", {
         .update({ status: status })
         .eq("id", id);
     },
+    async deleteTask(id) {
+      const { error } = await supabase
+      .from("tasks")
+      .delete()
+      .eq("id",id);
+    },
   },
 });
