@@ -1,66 +1,86 @@
 <template>
   <div class="text-center">
-    <form class="py-7" @submit.prevent="createNew()">
+    <form class="py-7 flex flex-col" @submit.prevent="createNew()">
       <input type="text" placeholder="título" v-model="title" class="" />
       <button type="submit">CREATE</button>
     </form>
 
-    <table class="table-auto mx-auto border-solid bg-yellow">
+    <table
+      class="table-auto mx-auto bg-slate-400 rounded-xl group space-x-6 border-separate border-spacing-6 border border-slate-500"
+    >
       <thead>
         <tr>
-          <th>User data</th>
           <th>TODO</th>
-          <th>In Progress</th>
+          <th>In PROGRESS</th>
           <th>COMPLETED</th>
-          <th>Tasks data</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr>
-          <th>{{ userStore.user.email }}</th>
-
-          <th>
-            <div v-for="task in tasksStore.tasks">
-              <div v-if="task.status == 1">
-                {{ task.title }}
-                <div class="text-xs">
-                  {{ task.inserted_at.slice(0,10)}}
-                  {{ task.inserted_at.slice(11,19)}}
+        <th class="">
+          <div v-for="task in tasksStore.tasks" class="w-[200px] my-5">
+            <div
+              v-if="task.status == 1"
+              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
+              {{ task.title }}
+              </div>
+              <button
+                @click="updateCurrent(2, task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                TO DO
+              </button>
+              <div class="flex-col">
+                <div class="text-xs text-slate-500">
+                  {{ task.inserted_at.slice(0, 10) }} / 
+                  {{ task.inserted_at.slice(11, 19) }}
                 </div>
-                  <button @click="updateCurrent(2, task.id)">TO DO</button>
               </div>
             </div>
-          </th>
+          </div>
+        </th>
 
-          <th>
-            <div v-for="task in tasksStore.tasks">
-              <div v-if="task.status == 2">
-                {{ task.title }}
-                <div class="text-xs">
-                  {{ task.inserted_at.slice(0,10)}}
-                  {{ task.inserted_at.slice(11,19)}}
-                </div>
-                  <button @click="updateCurrent(3, task.id)">DONE</button>
+        <th>
+          <div v-for="task in tasksStore.tasks" class="w-[200px] my-5">
+            <div
+              v-if="task.status == 2"
+              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
+              {{ task.title }}
+              </div>
+              <button
+                @click="updateCurrent(3, task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                DONE
+              </button>
+              <div class="text-xs text-slate-500">
+                {{ task.inserted_at.slice(0, 10) }} / 
+                {{ task.inserted_at.slice(11, 19) }}
               </div>
             </div>
-          </th>
+          </div>
+        </th>
 
-          <th>
-            <div v-for="task in tasksStore.tasks">
-              <div v-if="task.status == 3">
+        <th>
+          <div v-for="task in tasksStore.tasks" class="w-[200px] my-5">
+            <div
+              v-if="task.status == 3"
+              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
                 {{ task.title }}
-                <div class="text-xs">
-                  {{ task.inserted_at.slice(0,10)}}
-                  {{ task.inserted_at.slice(11,19)}}
-                </div>
-                <button @click="borrar(task.id)">DELETE</button>
+              </div>
+              <button
+                @click="borrar(task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                DELETE
+              </button>
+              <div class="text-xs text-slate-500">
+                {{ task.inserted_at.slice(0, 10) }} / 
+                {{ task.inserted_at.slice(11, 19) }}
               </div>
             </div>
-          </th>
-
-          <th>{{ tasksStore.tasks }}</th>
-        </tr>
+          </div>
+        </th>
       </tbody>
     </table>
   </div>
@@ -112,16 +132,4 @@ export default {
 };
 </script>
 
-<style scoped>
-input {
-  border: 1px solid;
-}
-table,
-th,
-td {
-  border: 1px solid;
-}
-button {
-  border: 1px solid;
-}
-</style>
+<style scoped></style>
