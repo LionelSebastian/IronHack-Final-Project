@@ -18,7 +18,7 @@ export default defineStore("user", {
         if (error) throw error;
         if(data) this.user = data.user;
        
-        this.$router.push("/dashboard"); 
+        this.$router.push("/dashboard/tasks"); 
     },
 
     async fetchUser() {

@@ -1,8 +1,7 @@
 
   <template>
     <div>
-     SOY UN USUARIO     
-     <RouterLink to="/tasks"><button>TASKS</button></RouterLink>
+     <h1>soy el usuario {{ userStore.user.email}}</h1>  
     </div>
   </template>
   

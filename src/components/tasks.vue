@@ -1,25 +1,22 @@
-<template>
-  <div class="text-center">
-    <form class="py-7" @submit.prevent="createNew()">
-      <input type="text" placeholder="título" v-model="title" class="" />
-      <button type="submit">CREATE</button>
-    </form>
- 
-    <table class="table-auto mx-auto border-solid bg-yellow">
-      <thead>
-        <tr>
-          <th>User data</th>
-          <th>TODO</th>
-          <th>In Progress</th>
-          <th>COMPLETED</th>
-          <th>Tasks data </th>
-        </tr>
-      </thead>
+<template> 
+    <div class="text-center">
+      <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink>
+      <form class="py-7" @submit.prevent="createNew()">
+        <input type="text" placeholder="título" v-model="title" class="" />
+        <button type="submit">CREATE</button>
+      </form>
+  
+      <table class="table-auto mx-auto border-solid bg-yellow">
+        <thead>
+          <tr>
+            <th>TODO</th>
+            <th>In Progress</th>
+            <th>COMPLETED</th>         
+          </tr>
+        </thead>
 
         <tbody>
           <tr>
-            <th>  {{ userStore.user.email }} </th> 
-
             <th>
               <div v-for="(task) in tasksStore.tasks">
                 <div v-if="task.status == 1" >
@@ -50,14 +47,12 @@
                  <!-- </form>    -->
                 </div>
               </div>
-            </th>
-
-            <th> {{ tasksStore.tasks }}</th>
+            </th>     
           </tr>
         </tbody>
 
       </table>  
-  </div>
+    </div>
 </template>
 
 <script>

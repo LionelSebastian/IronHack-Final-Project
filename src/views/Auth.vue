@@ -13,7 +13,7 @@
         <button type="submit">ENTER</button>
     </form>
  
-    <RouterLink to="/Dashboard">Go to Dashboard</RouterLink>
+    <RouterLink to="/Dashboard/tasks">Go to Dashboard</RouterLink>
     </body>
     <foot/>
 

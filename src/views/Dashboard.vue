@@ -1,12 +1,16 @@
 
   <template>
-    <navbar/>
-    <header class="flex justify-around pb-7">
-      <h1>Hola {{ userStore.user.email }} </h1>      
-      <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink>
-   </header>  
-  <tasks/>
-  <foot/>
+    <navbar/>   
+    <body class="flex">
+      <div class="self-start">
+        <sidebar/>    
+      </div>
+      <div class="mx-auto">
+        <RouterView/>
+      </div>   
+    </body>
+    
+    <foot/>
   </template>
   
   <script>
@@ -17,12 +21,13 @@
 
   import foot from '../components/foot.vue'
   import navbar from '../components/navbar.vue'
-  import tasks from '../components/tasks.vue'
+  import sidebar from "../components/sidebar.vue"
+
 
   export default{
 
-    components: {foot, navbar, tasks},
-    
+    components: {foot, navbar, sidebar},
+
     computed:{
       ...mapStores(userStore, tasksStore)
      },
