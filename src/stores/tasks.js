@@ -17,10 +17,10 @@ export default defineStore("tasks", {
       this.tasks = tasks;
       console.log(tasks);
     },
-    async createTask(userId, title, status) {
+    async createTask(userId, title, status,) {
       const { error } = await supabase
         .from("tasks")
-        .insert({ user_id: userId, title: title, status: status });
+        .insert({ user_id: userId, title: title, status: status,});
     },
     async updateTask(status, id) {
       const { error } = await supabase

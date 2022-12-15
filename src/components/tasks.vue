@@ -1,58 +1,90 @@
-<template> 
-    <div class="text-center">
-      <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink>
-      <form class="py-7" @submit.prevent="createNew()">
-        <input type="text" placeholder="título" v-model="title" class="" />
-        <button type="submit">CREATE</button>
-      </form>
-  
-      <table class="table-auto mx-auto border-solid bg-yellow">
-        <thead>
-          <tr>
-            <th>TODO</th>
-            <th>In Progress</th>
-            <th>COMPLETED</th>         
-          </tr>
-        </thead>
+<template>
+  <div class="text-center">
+    <form class="py-7 flex flex-col" @submit.prevent="createNew()">
+      <input type="text" placeholder="título" v-model="title" class="" />
+      <button type="submit">CREATE</button>
+    </form>
 
-        <tbody>
-          <tr>
-            <th>
-              <div v-for="(task) in tasksStore.tasks">
-                <div v-if="task.status == 1" >
-                  {{ task.title}}              
-                  <form @submit.prevent="tasksStore.updateTask(2, task.id)">
-                   <button >Hacer</button>
-                  </form> 
-                 </div>
-              </div>             
-            </th>
+    <table
+      class="table-auto mx-auto bg-slate-400 rounded-xl group space-x-6 border-separate border-spacing-6 border border-slate-500"
+    >
+      <thead>
+        <tr>
+          <th>TODO</th>
+          <th>In PROGRESS</th>
+          <th>COMPLETED</th>
+        </tr>
+      </thead>
 
-            <th><div v-for="(task) in tasksStore.tasks">   
-                  <div v-if="task.status == 2" >
-                  {{ task.title}}
-                    <form @submit.prevent="updateCurrent(3, task.id)">
-                      <button >Hecha</button>
-                    </form>
-                  </div>
-                </div>
-            </th>
-
-            <th>
-              <div v-for="(task) in tasksStore.tasks">   
-                <div v-if="task.status == 3" >
-                {{ task.title}} 
-                <!-- <form @submit.prevent="borrar(task.id), tasksStore.fetchTasks()">                             -->
-                 <button @click="borrar(task.id)" >DELETE</button>
-                 <!-- </form>    -->
+      <tbody>
+        <th class="">
+          <div v-for="task in tasksStore.tasks" class="w-[200px] my-5">
+            <div
+              v-if="task.status == 1"
+              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
+              {{ task.title }}
+              </div>
+              <button
+                @click="updateCurrent(2, task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                TO DO
+              </button>
+              <div class="flex-col">
+                <div class="text-xs text-slate-500">
+                  {{ task.inserted_at.slice(0, 10) }} / 
+                  {{ task.inserted_at.slice(11, 19) }}
                 </div>
               </div>
-            </th>     
-          </tr>
-        </tbody>
+            </div>
+          </div>
+        </th>
 
-      </table>  
-    </div>
+        <th>
+          <div v-for="task in tasksStore.tasks" class="w-[200px] my-5">
+            <div
+              v-if="task.status == 2"
+              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
+              {{ task.title }}
+              </div>
+              <button
+                @click="updateCurrent(3, task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                DONE
+              </button>
+              <div class="text-xs text-slate-500">
+                {{ task.inserted_at.slice(0, 10) }} / 
+                {{ task.inserted_at.slice(11, 19) }}
+              </div>
+            </div>
+          </div>
+        </th>
+
+
+        <th>
+          <div v-for="task in tasksStore.tasks" class="w-[200px] my-5">
+            <div
+              v-if="task.status == 3"
+              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
+                {{ task.title }}
+              </div>
+              <button
+                @click="borrar(task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                DELETE
+              </button>
+              <div class="text-xs text-slate-500">
+                {{ task.inserted_at.slice(0, 10) }} / 
+                {{ task.inserted_at.slice(11, 19) }}
+              </div>
+            </div>
+          </div>
+        </th>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -66,50 +98,39 @@ export default {
     return {
       user_id: null,
       title: null,
-      status: "1"
+      status: "1",
     };
   },
   computed: {
     ...mapStores(userStore, tasksStore),
-    },
+  },
 
   methods: {
-
-   async createNew() {
+    async createNew() {
       await this.tasksStore.createTask(
         this.userStore.user.id,
         this.title,
-        this.status
-      );  
-      await this.tasksStore.fetchTasks()  
-     },
+        this.status,
+        this.timeTask
+      );
+      await this.tasksStore.fetchTasks();
+    },
 
-      async updateCurrent(status, id) {
-      await this.tasksStore.updateTask(status, id); 
-        await this.tasksStore.fetchTasks();  
-      },     
-   
-     async borrar(id) {
+    async updateCurrent(status, id) {
+      await this.tasksStore.updateTask(status, id);
+      await this.tasksStore.fetchTasks();
+    },
+
+    async borrar(id) {
       await this.tasksStore.deleteTask(id);
-      await this.tasksStore.fetchTasks();  
-    }
-  }, 
+      await this.tasksStore.fetchTasks();
+    },
+  },
 
-   mounted(){
-       this.tasksStore.fetchTasks()
- },
- };
-  </script>
-  
-  
-  <style scoped>
-  input{
-    border: 1px solid;
-  }
-   table, th, td {
-  border: 1px solid;
-}
-button{
-  border: 1px solid;
-}
-</style>
+  mounted() {
+    this.tasksStore.fetchTasks();
+  },
+};
+</script>
+
+<style scoped></style>
