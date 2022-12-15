@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <form class="py-7" @submit.prevent="createNew()">
+    <form class="py-7" @submit.prevent="createNew(),tasksStore.fetchTasks()">
       <input type="text" placeholder="título" v-model="title" class="" />
       <button type="submit">CREATE</button>
     </form>
@@ -18,39 +18,45 @@
 
         <tbody>
           <tr>
-            <th>  {{ userStore.user.email }} </th>         
+            <th>  {{ userStore.user.email }} </th> 
+
             <th>
-              <div v-for="(task) in tasksStore.tasks">  
-
+              <div v-for="(task) in tasksStore.tasks">
                 <div v-if="task.status == 1" >
-                {{ task.title}}              
-                <button @click="tasksStore.updateTask(2, task.id)">HACER</button>
-                </div>
+                  {{ task.title}}              
+                  <form @submit.prevent="tasksStore.updateTask(2, task.id),tasksStore.fetchTasks()">
+                   <button >Hacer</button>
+                  </form> 
+                 </div>
+              </div>             
+            </th>
 
-            </div>
-             
-            </th>
             <th><div v-for="(task) in tasksStore.tasks">   
-                <div v-if="task.status == 2" >
-                {{ task.title}}
-                <button @click="tasksStore.updateTask(3, task.id)">HECHO</button>
-                </div>
+                  <div v-if="task.status == 2" >
+                  {{ task.title}}
+                    <form @submit.prevent="tasksStore.updateTask(3,   task.id), tasksStore.fetchTasks()">
+                      <button >Hecha</button>
+                    </form>
+                  </div>
                 </div>
             </th>
+
             <th>
               <div v-for="(task) in tasksStore.tasks">   
                 <div v-if="task.status == 3" >
-                {{ task.title}}                                
-                <button @click="borrar(task.id)">DELETE</button>
+                {{ task.title}} 
+                <form @submit.prevent="borrar(task.id), tasksStore.fetchTasks()">                            
+                 <button >DELETE</button>
+                 </form>   
                 </div>
               </div>
             </th>
+
             <th> {{ tasksStore.tasks }}</th>
           </tr>
         </tbody>
 
-      </table>    
-    <button @click="submitTask"></button>
+      </table>  
   </div>
 </template>
 
@@ -70,28 +76,25 @@ export default {
   },
   computed: {
     ...mapStores(userStore, tasksStore),
-  },
+    },
 
   methods: {
+       
     createNew() {
       this.tasksStore.createTask(
         this.userStore.user.id,
         this.title,
         this.status
-      );
-      this.fetch()
+      );    
      },
 
      updateCurrent() {
       this.tasksStore.updateTask(
         this.status,
         this.id
-        );
-      },    
-      
-      fetch (){
-        this.tasksStore.fetchTasks()
-      },
+        );  
+      },     
+   
      borrar(id) {
       this.tasksStore.deleteTask(id);
     }
