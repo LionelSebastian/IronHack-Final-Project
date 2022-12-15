@@ -12,8 +12,8 @@ export default defineStore("user", {
     async signIn(user, password){
       //respone maybe better in the begining
         const{data, error}=await supabase.auth.signInWithPassword({
-          email: user,
-          password: password,
+          email: "lionel.cioffi@gmail.com",
+          password: "lionel29",
         });
         if (error) throw error;
         if(data) this.user = data.user;

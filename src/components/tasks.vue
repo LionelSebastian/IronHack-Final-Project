@@ -1,12 +1,74 @@
 <template>
-  <body class="mx-auto">
-  <div class="text-center">
-    <form class="py-7 flex flex-col" @submit.prevent="createNew()">
-      <input type="text" placeholder="título" v-model="title" class="" />
-      <button type="submit">CREATE</button>
-    </form>
+  <body class="flex w-full">
+  <div class="flex w-full text-center ">
+     <div class=" bg-blue-400 w-1/3 " >
+      TODO
+      <div v-for="task in tasksStore.tasks" class="w-5/6 my-5 mx-auto hover:animate-bounce">
+            <div
+              v-if="task.status == 1"
+              class="rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
+              {{ task.title }}
+              </div>
+              <button
+                @click="updateCurrent(2, task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                TO DO
+              </button>
+              <div class="flex-col">
+                <div class="text-xs text-slate-500">
+                  {{ task.inserted_at.slice(0, 10) }} / 
+                  {{ task.inserted_at.slice(11, 19) }}
+                </div>
+              </div>
+            </div>
+          </div>
+    </div >
+    <div class=" bg-red-300 w-1/3">
+      IN PROGRESS
+      <div v-for="task in tasksStore.tasks" class="w-[200px] my-5 mx-auto">
+            <div
+              v-if="task.status == 2"
+              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
+              {{ task.title }}
+              </div>
+              <button
+                @click="updateCurrent(3, task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                DONE
+              </button>
+              <div class="text-xs text-slate-500">
+                {{ task.inserted_at.slice(0, 10) }} / 
+                {{ task.inserted_at.slice(11, 19) }}
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class=" bg-red-500 w-1/3 ">
+      COMPLETED
+      <div v-for="task in tasksStore.tasks" class="w-[200px] my-5 mx-auto">
+            <div
+              v-if="task.status == 3"
+              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              <div>
+                {{ task.title }}
+              </div>
+              <button
+                @click="borrar(task.id)"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+                DELETE
+              </button>
+              <div class="text-xs text-slate-500">
+                {{ task.inserted_at.slice(0, 10) }} / 
+                {{ task.inserted_at.slice(11, 19) }}
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
 
-    <table
+    <!-- <table
       class="table-auto mx-auto bg-slate-400 rounded-xl group space-x-6 border-separate border-spacing-6 border border-slate-500"
     >
       <thead>
@@ -84,8 +146,7 @@
           </div>
         </th>
       </tbody>
-    </table>
-  </div>
+    </table> -->
 </body>
 </template>
 
