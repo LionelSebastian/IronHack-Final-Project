@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <form class="py-7" @submit.prevent="createNew(),tasksStore.fetchTasks()">
+    <form class="py-7" @submit.prevent="createNew()">
       <input type="text" placeholder="título" v-model="title" class="" />
       <button type="submit">CREATE</button>
     </form>
@@ -8,11 +8,11 @@
     <table class="table-auto mx-auto border-solid bg-yellow">
       <thead>
         <tr>
-          <th>User</th>
+          <th>User data</th>
           <th>TODO</th>
           <th>In Progress</th>
           <th>COMPLETED</th>
-          <th>UTILITARIA</th>
+          <th>Tasks data </th>
         </tr>
       </thead>
 
@@ -24,7 +24,7 @@
               <div v-for="(task) in tasksStore.tasks">
                 <div v-if="task.status == 1" >
                   {{ task.title}}              
-                  <form @submit.prevent="tasksStore.updateTask(2, task.id),tasksStore.fetchTasks()">
+                  <form @submit.prevent="tasksStore.updateTask(2, task.id)">
                    <button >Hacer</button>
                   </form> 
                  </div>
@@ -34,7 +34,7 @@
             <th><div v-for="(task) in tasksStore.tasks">   
                   <div v-if="task.status == 2" >
                   {{ task.title}}
-                    <form @submit.prevent="tasksStore.updateTask(3,   task.id), tasksStore.fetchTasks()">
+                    <form @submit.prevent="updateCurrent(3, task.id)">
                       <button >Hecha</button>
                     </form>
                   </div>
@@ -45,9 +45,9 @@
               <div v-for="(task) in tasksStore.tasks">   
                 <div v-if="task.status == 3" >
                 {{ task.title}} 
-                <form @submit.prevent="borrar(task.id), tasksStore.fetchTasks()">                            
-                 <button >DELETE</button>
-                 </form>   
+                <!-- <form @submit.prevent="borrar(task.id), tasksStore.fetchTasks()">                             -->
+                 <button @click="borrar(task.id)" >DELETE</button>
+                 <!-- </form>    -->
                 </div>
               </div>
             </th>
@@ -79,24 +79,24 @@ export default {
     },
 
   methods: {
-       
-    createNew() {
-      this.tasksStore.createTask(
+
+   async createNew() {
+      await this.tasksStore.createTask(
         this.userStore.user.id,
         this.title,
         this.status
-      );    
+      );  
+      await this.tasksStore.fetchTasks()  
      },
 
-     updateCurrent() {
-      this.tasksStore.updateTask(
-        this.status,
-        this.id
-        );  
+      async updateCurrent(status, id) {
+      await this.tasksStore.updateTask(status, id); 
+        await this.tasksStore.fetchTasks();  
       },     
    
-     borrar(id) {
-      this.tasksStore.deleteTask(id);
+     async borrar(id) {
+      await this.tasksStore.deleteTask(id);
+      await this.tasksStore.fetchTasks();  
     }
   }, 
 

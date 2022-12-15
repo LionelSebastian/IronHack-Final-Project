@@ -2,9 +2,8 @@
   <template>
     <navbar/>
     <header class="flex justify-around pb-7">
-      <h1>Hola {{ userStore.user.email }} </h1>
-      <button class="border-button" @click="tasksStore.fetchTasks">Fetch</button>
-      <RouterLink to="/"> <button class="border-solid">Volver a Auth</button></RouterLink>
+      <h1>Hola {{ userStore.user.email }} </h1>      
+      <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink>
    </header>  
   <tasks/>
   <foot/>
@@ -23,6 +22,7 @@
   export default{
 
     components: {foot, navbar, tasks},
+    
     computed:{
       ...mapStores(userStore, tasksStore)
      },
