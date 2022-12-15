@@ -1,6 +1,6 @@
 <template>
-    <body class=" flex mx-2">
-        <div class=" flex-col bg-blue-100"> 
+    <body class=" flex min-h-screen">
+        <div class=" flex-col bg-blue-100 py-6 px-3"> 
             <RouterLink to="/dashboard/user"  >usuario</RouterLink>
             <img src="../../public/Ironhack_logologo.png" alt="">
             <RouterLink to="/dashboard/tasks"  >tareas</RouterLink>
@@ -17,10 +17,5 @@
     export default{ 
  
     }
- </script>
-    
-    
- <style scoped>
-     
- </style>
+ </script>   
     

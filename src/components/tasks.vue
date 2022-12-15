@@ -1,4 +1,5 @@
 <template>
+  <body class="mx-auto">
   <div class="text-center">
     <form class="py-7 flex flex-col" @submit.prevent="createNew()">
       <input type="text" placeholder="título" v-model="title" class="" />
@@ -85,6 +86,7 @@
       </tbody>
     </table>
   </div>
+</body>
 </template>
 
 <script>

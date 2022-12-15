@@ -2,12 +2,8 @@
   <template>
     <navbar/>   
     <body class="flex">
-      <div class="self-start">
         <sidebar/>    
-      </div>
-      <div class="mx-auto">
         <RouterView/>
-      </div>   
     </body>
     
     <foot/>
