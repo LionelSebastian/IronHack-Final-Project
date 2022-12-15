@@ -19,7 +19,7 @@
                         <label for="">Message</label>
                         <textarea name="" id="" cols="30" rows="7" placeholder="Write your message here..."></textarea>
                     </p>
-                    <p class="full-width submit submit">
+                    <p class="full-width submit">
                         <button type="submit" value="Submit" style="cursor: pointer">Submit</button>
                     </p>
                 </form>
@@ -70,7 +70,7 @@
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
+    grid-gap: 20px;
   }
   form label {
     display: block;
@@ -82,13 +82,13 @@
   button,
   input,
   textarea {
-    padding: 1em;
+    padding: 0.5em;
   }
   
   button {
     background: #072AC8;
     color: white;
-    width: 100%;
+    width: 50%;
     border: 0;
   }
   button:hover {

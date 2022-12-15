@@ -4,12 +4,12 @@
     <body class="flex">
         <sidebar/>    
         <RouterView/>
-    </body>
-    
+    </body>    
     <foot/>
   </template>
   
   <script>
+
   import { mapStores } from "pinia" 
   import { RouterLink, RouterView} from 'vue-router'
   import userStore from '../stores/user'
