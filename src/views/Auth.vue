@@ -4,14 +4,15 @@
     <body class="text-center">  
 
     <h1 class="p-7">Autenticate o registrate</h1>
-
-    <form class ="mx-auto text-center" @submit.prevent = "login()" >
+    
+    <SignIn />
+    <!-- <form class ="mx-auto text-center" @submit.prevent = "login()" >
         <input type="email" placeholder="ingresa tu email" v-model="user" class="">
         <br/>
         <input type="text" placeholder="ingresa password" v-model="password">
         <br/>
         <button type="submit">ENTER</button>
-    </form>
+    </form> -->
  
     <RouterLink to="/Dashboard/tasks">Go to Dashboard</RouterLink>
     </body>
@@ -20,14 +21,15 @@
 </template>
     
 <script>
-import { RouterLink } from 'vue-router'
-import { mapStores } from "pinia"
-import userStore from '../stores/user'
+import { RouterLink } from 'vue-router';
+import { mapStores } from "pinia";
+import userStore from '../stores/user';
 import navbar from '../components/navbar.vue';
-import foot from '../components/foot.vue'
+import foot from '../components/foot.vue';
+import SignIn from '../components/SignIn.vue' 
 
 export default{
-    components: {navbar, foot},
+    components: {navbar, foot, SignIn},
     computed:{
       ...mapStores(userStore)
      },
