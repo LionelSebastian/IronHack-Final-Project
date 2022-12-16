@@ -13,35 +13,11 @@
         <form class="py-3 flex flex-col" @submit.prevent="createNew()">
         <input type="text" placeholder="título" v-model="title" class="" />
         <button type="submit">CREATE</button>
-        </form>
-        <div class>
-          Accede a tus tareas archivadas
-        </div>
-
-        <div class="w-5/6 rounded-xl bg-white bg-opacity-50 shadow-xl hover:rounded-2xl mx-auto">
-              <div class="text-center">
-              Aca quizas iria un v-if con una variable que se activara cuando picas a una tarea en cioncreto
-              </div>
-              <!-- <button
-                @click="updateCurrent(2, task.id)"
-                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
-                TO DO
-              </button>
-              <div class="flex-col">
-                <div class="text-xs text-slate-500">
-                  {{ task.inserted_at.slice(0, 10) }} / 
-                  {{ task.inserted_at.slice(11, 19) }}
-                </div>
-              </div> -->
-            </div>
-
-        <!-- <section>
-            <RouterLink to="/dashboard/tasks"  >tareas</RouterLink>
-            <img src="../../public/favicon.ico" alt="">
-            <RouterLink to="/dashboard/contact"  >contacto</RouterLink>
-            <img src="../../public/Ironhack_logologo.png" alt="">
-        </section> -->
-        <!-- </div> -->
+        </form> 
+        <task/>
+        <div class="text-center pb-5">
+          Tienes 39 tareas archivadas
+        </div>  
     </body>
  </template>
     
@@ -51,6 +27,8 @@ import { mapStores } from "pinia";
 import userStore from "../stores/user";
 import tasksStore from "../stores/tasks";
 
+import task from "../components/task.vue"
+
 export default {
   data() {
     return {
@@ -59,6 +37,9 @@ export default {
       status: "1",
     };
   },
+
+  components:{ task },
+
   computed: {
     ...mapStores(userStore, tasksStore),
   },

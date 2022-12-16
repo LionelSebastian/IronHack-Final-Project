@@ -26,10 +26,10 @@
     </div >
     <div class=" bg-red-300 w-1/3">
       IN PROGRESS
-      <div v-for="task in tasksStore.tasks" class="w-[200px] my-5 mx-auto">
+      <div v-for="task in tasksStore.tasks" class="w-5/6 my-5 mx-auto hover:animate-bounce">
             <div
               v-if="task.status == 2"
-              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              class="rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
               <div>
               {{ task.title }}
               </div>
@@ -47,10 +47,10 @@
     </div>
     <div class=" bg-red-500 w-1/3 ">
       COMPLETED
-      <div v-for="task in tasksStore.tasks" class="w-[200px] my-5 mx-auto">
+      <div v-for="task in tasksStore.tasks" class="w-5/6 my-5 mx-auto hover:animate-bounce">
             <div
               v-if="task.status == 3"
-              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+              class="rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
               <div>
                 {{ task.title }}
               </div>
