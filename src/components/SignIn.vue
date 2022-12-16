@@ -4,12 +4,12 @@
         type="email"
         placeholder="ingresa tu email"
         v-model="user"
-        class=""
+        class="rounded-lg my-1 px-4 bg-slate-200"
       />
       <br />
-      <input type="text" placeholder="ingresa password" v-model="password" />
+      <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="ingresa password" v-model="password" />
       <br />
-      <button type="submit">ENTER</button>
+      <button class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="submit">ENTER</button>
     </form>
 </template>
 

@@ -1,8 +1,7 @@
 <template>
-   <div class="flex pb justify-between bg-blue-400">
-   <img src="../../public/Ironhack_logologo.png" alt="Logo">
-   <h1>Iron Task navbar</h1>
-   <button v-if="userStore.user !== null" @click="logOut()">Sign Out</button>
+   <div :class="`flex p-4 ${justify()} bg-blue-400`" >
+   <img src="../../public/LNGteam.png" class="h-15" alt="Logo">
+   <button v-if="userStore.user !== null" @click="logOut()" clas="cursor-pointer">Sign Out--></button>
    </div>
 </template>
    
@@ -14,10 +13,22 @@ export default {
   computed: {
     ...mapStores(userStore),
   },
+  data(){
+    return {
+      flexStart: "justify-start",
+      spaceBetween: "justify-between",
+    }
+  },
   methods: {
     logOut() {
       this.userStore.signOut();
     },
+    justify() {
+      if (this.userStore.user !== null) {
+        return this.spaceBetween;
+      }
+      return this.flexStart
+    }
   },
 };
 </script>

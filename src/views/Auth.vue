@@ -1,15 +1,15 @@
 <template>
-    <navbar/>
+    <navbar class="h-1/8"/>
   
-    <body class="text-center">  
+    <body class="text-center bg-slate-400">  
 
-    <h1 class="p-7">Autenticate o </h1>
-    
-    <RouterLink to="/signup">Registrate</RouterLink>
+    <h1 class="p-7">Please Sign in:</h1>
     
     <RouterView/>
- 
-    <RouterLink to="/Dashboard/tasks">Go to Dashboard</RouterLink>
+    
+    <RouterLink to="/signup" clas="cursor-pointer text-sky-900">¿Are you not registred? Create a free account<Input:c></Input:c></RouterLink>
+    
+    <!-- <RouterLink to="/Dashboard/tasks">Go to Dashboard</RouterLink> -->
     </body>
     <foot/>
 
