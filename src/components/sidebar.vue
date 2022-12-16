@@ -1,23 +1,35 @@
 <template>
     <body class=" justify-between bg-blue-100 py-6 px-3 min-h-full">
         <!-- <div class="justify-between "> -->
-        <section class=""> 
-            <RouterLink to="/dashboard/user"  >usuario</RouterLink>
-            <img src="../../public/Ironhack_logologo.png" alt="">
-            <RouterLink to="/dashboard/tasks"  >tareas</RouterLink>
-            <img src="../../public/favicon.ico" alt="">
-            <RouterLink to="/dashboard/contact"  >contacto</RouterLink>
-            <img src="../../public/Ironhack_logologo.png" alt="">
-        </section>
-
-        <form class="py-3 flex flex-col" @submit.prevent="createNew()">
-        <input type="text" placeholder="título" v-model="title" class="" />
-        <button type="submit">CREATE</button>
+        <section class="flex max-w-1/3"> 
+            <RouterLink to="/dashboard/user"  >
+              <img src="../../public/user.png" alt="User-logo">
+            </RouterLink>
+           
+            <RouterLink to="/dashboard/tasks">
+                <img src="../../public/tasks.png" alt="tasks-logo">
+            </RouterLink>
+          
+            <RouterLink to="/dashboard/contact">
+            <img src="../../public/contact.png" alt="contactc-us-logo">  
+            </RouterLink>         
+        </section>           
+      
+         <form class="py-3 flex flex-col" @submit.prevent="createNew()">
+         <input type="text" placeholder="título" v-model="title" class="" />
+         <button type="submit">CREATE</button>
         </form> 
-        <task/>
+
+        <div>
+         <chart/>
+        </div>
+
         <div class="text-center pb-5">
-          Tienes 39 tareas archivadas
-        </div>  
+          Tienes {{39}} tareas archivadas
+        </div> 
+
+        <task/>
+
     </body>
  </template>
     
@@ -28,6 +40,7 @@ import userStore from "../stores/user";
 import tasksStore from "../stores/tasks";
 
 import task from "../components/task.vue"
+import chart from "../components/chart.vue"
 
 export default {
   data() {
@@ -38,7 +51,7 @@ export default {
     };
   },
 
-  components:{ task },
+  components:{ task, chart },
 
   computed: {
     ...mapStores(userStore, tasksStore),
@@ -72,4 +85,6 @@ export default {
   },
 };
  </script>   
+ <style>
+</style>
     

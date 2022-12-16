@@ -2,7 +2,7 @@
   <template>
     <navbar/>   
     <body class="flex">
-        <sidebar/>    
+        <sidebar class="w-1/3"/>    
         <RouterView/>
     </body>    
     <foot/>
