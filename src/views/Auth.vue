@@ -3,8 +3,9 @@
 
   <body class="text-center">
     <h1 class="p-7">Autenticate o registrate</h1>
-
-    <form class="mx-auto text-center" @submit.prevent="login()">
+   
+    <SignIn />
+    <!-- <form class="mx-auto text-center" @submit.prevent="login()">
       <input
         type="email"
         placeholder="ingresa tu email"
@@ -15,8 +16,8 @@
       <input type="text" placeholder="ingresa password" v-model="password" />
       <br />
       <button type="submit">ENTER</button>
-    </form>
-
+    </form> -->
+    
     <SignUp />
     <!-- <form class="mx-auto text-center" @submit.prevent="register()">
       <input
@@ -43,34 +44,35 @@ import { mapStores } from "pinia";
 import userStore from "../stores/user";
 import navbar from "../components/navbar.vue";
 import foot from "../components/foot.vue";
-import SignUp from "../components/signUp.vue";
+import SignUp from "../components/SignUp.vue";
+import SignIn from "../components/SignIn.vue";
 
 export default {
-  components: { navbar, foot, SignUp },
+  components: { navbar, foot, SignUp, SignIn },
   computed: {
     ...mapStores(userStore),
   },
   data() {
     return {
-      user: null,
-      password: null,
+      // user: null,
+      // password: null,
       // newUser: null,
       // newPassword: null,
       // newPhone: null,
     };
   },
-  methods: {
-    // register() {
-    //   this.userStore.signUp(this.newUser, this.newPassword, this.newPhone);
-    //   console.log(this.user);
-    //   console.log(user);
-    // },
-    login() {
-      this.userStore.signIn(this.user, this.password);
-      console.log(this.user);
-      console.log(user);
-    },
-  },
+  // methods: {
+  //   register() {
+  //     this.userStore.signUp(this.newUser, this.newPassword, this.newPhone);
+  //     console.log(this.user);
+  //     console.log(user);
+  //   },
+  //   login() {
+  //     this.userStore.signIn(this.user, this.password);
+  //     console.log(this.user);
+  //     console.log(user);
+  //   },
+  // },
 };
 </script>
 
