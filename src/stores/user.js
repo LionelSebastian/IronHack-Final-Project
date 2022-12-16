@@ -20,6 +20,10 @@ export default defineStore("user", {
        
         this.$router.push("/dashboard/tasks"); 
     },
+    async signOut() {
+      const { error } = await supabase.auth.signOut();
+      this.$router.push({ name: "Auth" })
+    },
 
     async fetchUser() {
       const user = await supabase.auth.user();
