@@ -23,7 +23,7 @@ export default defineStore("user", {
     async signOut() {
       const { error } = await supabase.auth.signOut();
       this.user = null;
-      this.$router.push({ name: "Auth" })
+      this.$router.push({ name: "SignIn" })
     },
 
     async fetchUser() {
