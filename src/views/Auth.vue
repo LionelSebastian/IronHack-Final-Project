@@ -17,7 +17,8 @@
       <button type="submit">ENTER</button>
     </form>
 
-    <form class="mx-auto text-center" @submit.prevent="register()">
+    <SignUp />
+    <!-- <form class="mx-auto text-center" @submit.prevent="register()">
       <input
         type="email"
         placeholder="ingresa tu email"
@@ -29,7 +30,7 @@
       <br />
       <input type="text" placeholder="ingresa nombre" v-model="newPhone" />
       <button type="submit">ENTER</button>
-    </form>
+    </form> -->
 
     <RouterLink to="/Dashboard">Go to Dashboard</RouterLink>
   </body>
@@ -42,9 +43,10 @@ import { mapStores } from "pinia";
 import userStore from "../stores/user";
 import navbar from "../components/navbar.vue";
 import foot from "../components/foot.vue";
+import SignUp from "../components/signUp.vue";
 
 export default {
-  components: { navbar, foot },
+  components: { navbar, foot, SignUp },
   computed: {
     ...mapStores(userStore),
   },
@@ -52,21 +54,21 @@ export default {
     return {
       user: null,
       password: null,
-      newUser: null,
-      newPassword: null,
-      newPhone: null,
+      // newUser: null,
+      // newPassword: null,
+      // newPhone: null,
     };
   },
   methods: {
-    register() {
-        this.userStore.signUp(this.newUser, this.newPassword, this.newPhone);
-        console.log(this.user)
-        console.log(user)
-    },
+    // register() {
+    //   this.userStore.signUp(this.newUser, this.newPassword, this.newPhone);
+    //   console.log(this.user);
+    //   console.log(user);
+    // },
     login() {
-        this.userStore.signIn(this.user, this.password);
-        console.log(this.user)
-        console.log(user)
+      this.userStore.signIn(this.user, this.password);
+      console.log(this.user);
+      console.log(user);
     },
   },
 };
