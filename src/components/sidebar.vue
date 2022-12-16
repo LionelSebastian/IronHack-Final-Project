@@ -1,5 +1,5 @@
 <template>
-    <body class=" justify-between bg-blue-100 py-6 px-3 min-h-full">
+    <body class=" justify-between bg-blue-100 py-6 px-3 min-h-full w-1/4">
         <!-- <div class="justify-between "> -->
         <section class="flex max-w-1/3"> 
             <RouterLink to="/dashboard/user"  >
@@ -14,21 +14,45 @@
             <img src="../../public/contact.png" alt="contactc-us-logo">  
             </RouterLink>         
         </section>           
-      
+        
          <form class="py-3 flex flex-col" @submit.prevent="createNew()">
          <input type="text" placeholder="título" v-model="title" class="" />
-         <button type="submit">CREATE</button>
+         <button type="submit">Create a new taks</button>
         </form> 
+        <section>  
+            
+          <div>    
+          <chart/>
+          </div> 
+          
+          <div class="flex justify-around">
 
-        <div>
-         <chart/>
-        </div>
+            <div class="w-1/4 text-center p-3  bg-blue-300 rounded-full">
+            {{tasksStore.tasks.filter( task => task.status == 1).length }}
+            <p>Todo</p>
+            </div> 
 
-        <div class="text-center pb-5">
-          Tienes {{39}} tareas archivadas
-        </div> 
+            <div class=" w-1/4 text-center p-3  bg-blue-300 rounded-full">
+            {{tasksStore.tasks.filter( task => task.status == 2).length }}
+            <p>Active</p> 
+            </div> 
 
-        <task/>
+            <div class=" w-1/4 text-center p-3  bg-green-200 rounded-full">
+            {{ tasksStore.tasks.filter( task => task.status == 3).length }}
+            <p>Done</p>
+            </div> 
+
+            <div class="w-1/4 text-center p-3  bg-green-500 rounded-full">
+            {{ tasksStore.tasks.filter( task => task.status == 4).length }}
+            <p class=" font-thin text-sm hover:text-base">Archived</p>
+            </div>
+          </div>
+                   
+          <div>
+          <task/>
+          </div>
+
+        </section> 
 
     </body>
  </template>
@@ -41,6 +65,7 @@ import tasksStore from "../stores/tasks";
 
 import task from "../components/task.vue"
 import chart from "../components/chart.vue"
+              
 
 export default {
   data() {
@@ -62,8 +87,7 @@ export default {
       await this.tasksStore.createTask(
         this.userStore.user.id,
         this.title,
-        this.status,
-        this.timeTask
+        this.status,   
       );
       await this.tasksStore.fetchTasks();
     },
@@ -84,7 +108,8 @@ export default {
     console.log(tasksStore.tasks)
   },
 };
- </script>   
+ </script>  
+  
  <style>
 </style>
     

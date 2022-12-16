@@ -7,6 +7,7 @@ export default defineStore("tasks", {
       tasks: null,
     };
   },
+  
 
   actions: {
     async fetchTasks() {

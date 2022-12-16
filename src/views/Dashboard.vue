@@ -2,7 +2,7 @@
   <template>
     <navbar/>   
     <body class="flex">
-        <sidebar class="w-1/3"/>    
+        <sidebar/>    
         <RouterView/>
     </body>    
     <foot/>
@@ -33,6 +33,10 @@
         this.userStore.signUp()
      }   
     },
+    mounted() {
+    this.tasksStore.fetchTasks();
+    console.log(tasksStore.tasks)
+  },
   }
   </script>  
   
