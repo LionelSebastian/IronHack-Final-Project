@@ -1,19 +1,25 @@
 <template>
-   <div class="flex pb-5 justify-between">
-   <img src="../../public/Ironhack_logologo.png" alt="Logo">
-   <h1>Iron Task navbar</h1>
-   </div>
+  <div class="flex pb-5 justify-between">
+    <img src="../../public/Ironhack_logologo.png" alt="Logo" />
+    <h1>Iron Task navbar</h1>
+    <button @click="logOut()">Sign Out</button>
+  </div>
 </template>
-   
-<script> 
-   export default{ 
 
-   }
+<script>
+import { mapStores } from "pinia";
+import userStore from "../stores/user";
+
+export default {
+  computed: {
+    ...mapStores(userStore),
+  },
+  methods: {
+    logOut() {
+      this.userStore.signOut();
+    },
+  },
+};
 </script>
-   
-   
-<style scoped>
 
-   
-</style>
-   
+<style scoped></style>

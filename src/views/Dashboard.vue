@@ -4,7 +4,7 @@
     <header class="flex justify-around pb-7">
       <h1>Hola {{ userStore.user.email }} </h1>      
       <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink>
-      <button @click="logOut()">Sign Out</button>
+      <!-- <button @click="logOut()">Sign Out</button> -->
    </header>  
   <tasks/>
   <foot/>
@@ -32,9 +32,9 @@
      login(){
         this.userStore.signUp()
       }, 
-     logOut() {
-        this.userStore.signOut()
-      }   
+    //  logOut() {
+    //     this.userStore.signOut()
+    //   }   
     },
   }
   </script>  
