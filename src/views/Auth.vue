@@ -3,16 +3,11 @@
   
     <body class="text-center">  
 
-    <h1 class="p-7">Autenticate o registrate</h1>
+    <h1 class="p-7">Autenticate o </h1>
     
-    <SignIn />
-    <!-- <form class ="mx-auto text-center" @submit.prevent = "login()" >
-        <input type="email" placeholder="ingresa tu email" v-model="user" class="">
-        <br/>
-        <input type="text" placeholder="ingresa password" v-model="password">
-        <br/>
-        <button type="submit">ENTER</button>
-    </form> -->
+    <RouterLink to="/signup">Registrate</RouterLink>
+    
+    <RouterView/>
  
     <RouterLink to="/Dashboard/tasks">Go to Dashboard</RouterLink>
     </body>
@@ -21,7 +16,7 @@
 </template>
     
 <script>
-import { RouterLink } from 'vue-router';
+import { RouterLink, RouterView } from 'vue-router';
 import { mapStores } from "pinia";
 import userStore from '../stores/user';
 import navbar from '../components/navbar.vue';
