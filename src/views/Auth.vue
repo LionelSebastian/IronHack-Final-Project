@@ -5,33 +5,8 @@
     <h1 class="p-7">Autenticate o registrate</h1>
    
     <SignIn />
-    <!-- <form class="mx-auto text-center" @submit.prevent="login()">
-      <input
-        type="email"
-        placeholder="ingresa tu email"
-        v-model="user"
-        class=""
-      />
-      <br />
-      <input type="text" placeholder="ingresa password" v-model="password" />
-      <br />
-      <button type="submit">ENTER</button>
-    </form> -->
-    
+
     <SignUp />
-    <!-- <form class="mx-auto text-center" @submit.prevent="register()">
-      <input
-        type="email"
-        placeholder="ingresa tu email"
-        v-model="newUser"
-        class=""
-      />
-      <br />
-      <input type="text" placeholder="ingresa password" v-model="newPassword" />
-      <br />
-      <input type="text" placeholder="ingresa nombre" v-model="newPhone" />
-      <button type="submit">ENTER</button>
-    </form> -->
 
     <RouterLink to="/Dashboard">Go to Dashboard</RouterLink>
   </body>
