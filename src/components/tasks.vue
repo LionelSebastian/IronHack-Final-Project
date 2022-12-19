@@ -2,7 +2,7 @@
   <div class="">  
 
     <table
-      class="tableWidth mx-auto bg-slate-400 group space-x-6 border-separate border-spacing-6">
+      class="tableWidth mx-auto h-screen bg-slate-400 group space-x-6 border-separate border-spacing-6">
       <thead class="w-[280px]">
         <tr>
           <th class="w-[280px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
@@ -29,7 +29,7 @@
 
       <tbody class="">
         <th class="">
-          <div v-for="task in tasksStore.tasks" class="w-auto my-5 text-base text-sky-900 ">
+          <div v-for="task in tasksStore.tasks" class="w-[280px] h-auto my-5 text-base text-sky-900">
             <div
               v-if="task.status == 1"
               class="w-[280px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-300">
