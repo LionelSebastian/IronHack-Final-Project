@@ -26,23 +26,18 @@
 
         </section>  
         <section class="flex mx-auto">
-
-            <form class=" flex-col py-7 flex gap-2 justify-center" @submit.prevent="createNew()">
-            <input
-                ref="taskInput"
-                type="text"
-                placeholder=" task name"
-                v-model="title"
-                class=" w-full border 1 border-black rounded"/>
-
-            <button
-                @click="resetInput"
-                type="submit"
-                class=" mx-auto w-2/3 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
-                CREATE
-            </button>
-
-            </form>
+          <form class="py-7 flex-col flex gap-2 justify-center" @submit.prevent="createNew()">
+      <input
+        type="text"
+        placeholder=" task name"
+        v-model="title"
+        class="w-40 border 1 border-black rounded"/>
+      <button
+        type="submit"
+        class=" mx-auto w-2/3 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
+        CREATE
+      </button>
+    </form>      
 
 </section> 
 </template>
@@ -73,10 +68,12 @@
       await this.tasksStore.createTask(
         this.userStore.user.id,
         this.title,
-        this.status,   
+        this.status,
+        this.timeTask
       );
+      this.title=""
       await this.tasksStore.fetchTasks();
-    },  
+    },
   },
  };
 </script>
