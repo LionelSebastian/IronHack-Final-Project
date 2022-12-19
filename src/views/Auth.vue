@@ -1,13 +1,17 @@
 <template>
+  <header class="bg-blue-400">
   <navbar />
-  <body class="text-center bg-slate-400">
+  </header>
+  <body class="text-center py-20 bg-slate-400">
     <RouterView />
   </body>
-  <foot />
+  <!-- <footer class=" bg-blue-800">
+    <foot />
+  </footer> -->
 </template>
 
 <script>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 import { mapStores } from "pinia";
 import userStore from "../stores/user";
 import navbar from "../components/navbar.vue";
@@ -34,11 +38,10 @@ export default {
 </script>
 
 <style scoped>
-input {
-  border: solid 2px black;
-}
-button {
-  border: solid 2px black;
-  margin: 5px;
-}
+header {
+  height: 5vh;
+} 
+body {
+  height: 95vh;
+} 
 </style>

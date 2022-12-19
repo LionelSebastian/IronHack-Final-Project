@@ -1,6 +1,6 @@
 
   <template>
-    <navbar/>   
+      <navbar/>   
     <body class="flex">
         <sidebar/>    
         <RouterView/>    

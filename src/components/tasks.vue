@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink>
+    <!-- <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink> -->
     <form class="py-7 flex gap-2 justify-center" @submit.prevent="createNew()">
       <input
         type="text"

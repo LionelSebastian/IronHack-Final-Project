@@ -1,6 +1,6 @@
 
   <template>
-    <div class="text-center bg-blue-800">
+    <div class="text-center">
      SOY EL COMPONENTE FOOT
     </div>
   </template>
