@@ -1,5 +1,5 @@
 <template>
-  <body  class="w-5/6 mx-auto">
+  <body  class="mx-auto px-4 pt-4">
   <Bar :data="data" :options="options" />
   </body>
 </template>

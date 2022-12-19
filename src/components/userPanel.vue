@@ -40,10 +40,10 @@
             type="text"
             placeholder="  something to do"
             v-model="title"
-            class=" w-5/6 border 1 border-grey rounded-lg"/>
+            class=" h-5/6 w-5/6 border 1 border-grey rounded-lg"/>
           <button
             type="submit"
-            class="w-5/6 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+            class="mt-3 w-5/6 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
             CREATE
           </button>
          </form>   
