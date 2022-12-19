@@ -1,18 +1,5 @@
 <template>
-  <div class="">
-    <!-- <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink> -->
-    <form class="py-7 flex gap-2 justify-center" @submit.prevent="createNew()">
-      <input
-        type="text"
-        placeholder=" task name"
-        v-model="title"
-        class="w-40 border 1 border-black rounded"/>
-      <button
-        type="submit"
-        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-2 border border-gray-400 rounded shadow">
-        CREATE
-      </button>
-    </form>
+  <div class="">  
 
     <table
       class="tableWidth mx-auto bg-slate-400 group space-x-6 border-separate border-spacing-6">
@@ -162,18 +149,8 @@ export default {
     ...mapStores(userStore, tasksStore),
   },
 
-  methods: {
-  
-    async createNew() {
-      await this.tasksStore.createTask(
-        this.userStore.user.id,
-        this.title,
-        this.status,
-        this.timeTask
-      );
-      this.title=""
-      await this.tasksStore.fetchTasks();
-    },
+  methods: {  
+
 
     async updateCurrent(status, id) {
       await this.tasksStore.updateTask(status, id);

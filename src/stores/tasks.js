@@ -10,18 +10,6 @@ export default defineStore("tasks", {
   },
 
  getters: {
-    // pending() {
-    //  return this.tasks.filter((task) => task.status == 1);
-    // },
-    // inProgress(){ 
-    //  return this.tasks.filter( (task) => task.status == 2);
-    // },  
-    // completed(){ 
-    //   return this.tasks.filter( (task) => task.status == 3);
-    // },
-    // archived(){ 
-    //   return this.tasks.filter( (task) => task.status == 4);
-    // },
     getByStatus(state){
       return function (status){
         return state.tasks.filter((task) => task.status === status);

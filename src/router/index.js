@@ -6,6 +6,7 @@ import user from "../components/user.vue"
 import contact from "../components/contact.vue"
 import SignUp from "../components/SignUp.vue"
 import SignIn from "../components/SignIn.vue"
+import archived from "../components/archived.vue"
 
 
 const router = createRouter({
@@ -44,6 +45,9 @@ const router = createRouter({
          { path: "/dashboard/contact",
             component: contact,
          },
+         { path: "/dashboard/archived",
+            component: archived,
+         }
       ],
    }, 
   ],
