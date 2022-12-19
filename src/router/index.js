@@ -15,13 +15,17 @@ const router = createRouter({
     { name:"Dashboard",
       path: "/dashboard" ,
       component: Dashboard,
+      
       children: [
+        { name:"Tasks",
+          path: "/tasks",
+            component: tasks,
+         },
+
         { path: "/dashboard/user",
              component: user,
         },
-        { path: "/dashboard/tasks",
-            component: tasks,
-         },
+        
          { path: "/dashboard/contact",
             component: contact,
          },

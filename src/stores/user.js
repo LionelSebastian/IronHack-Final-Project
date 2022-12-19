@@ -7,6 +7,13 @@ export default defineStore("user", {
       user: null,
     };
   },
+  getters: {
+    getById(state){
+      return function (userId){
+        return state.user;
+      };
+    },
+  },
 
   actions: {
     async signIn(user, password){
@@ -18,7 +25,7 @@ export default defineStore("user", {
         if (error) throw error;
         if(data) this.user = data.user;
        
-        this.$router.push("/dashboard/tasks"); 
+        this.$router.push({ name: "Tasks" }); 
     },
     async signOut() {
       const { error } = await supabase.auth.signOut();

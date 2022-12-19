@@ -1,23 +1,17 @@
 export const data = {
     labels: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
       'October',
       'November',
-      'December'
+      'December',
+      'January',
+      'February',
+      'totales', 
     ],
     datasets: [
       {
         label: 'Tareas completadas',
-        backgroundColor: '#f87979',
-        data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+        backgroundColor: 'blue',
+        data: [, 20, 12, 39, 10, 80]
       }
     ]
   }

@@ -1,6 +1,5 @@
 <template>
-  <div class="">
-    <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink>
+  <div class="mx-auto">
     <form class="py-7 flex gap-2 justify-center" @submit.prevent="createNew()">
       <input
         ref="taskInput"
@@ -58,13 +57,13 @@
               </div>
             </div>
           </div>
-    </div >
-    <div class=" bg-red-300 w-1/3">
+        </th >
+      <th class="">
       IN PROGRESS
-      <div v-for="task in tasksStore.tasks" class="w-5/6 my-5 mx-auto hover:animate-bounce">
+      <div v-for="task in tasksStore.tasks" class="w-[200px] my-5 text-base text-sky-900">
             <div
               v-if="task.status == 2"
-              class="w-[200px] h-[100px] rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl"
+              class="w-[200px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl"
             >
               <div>
                 {{ task.title }}
@@ -165,9 +164,9 @@ export default {
     },
   },
 
-  mounted() {
-    this.tasksStore.fetchTasks();
-  },
+  // mounted() {
+  //   this.tasksStore.fetchTasks();
+  // },
 };
 </script>
 

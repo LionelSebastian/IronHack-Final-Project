@@ -3,7 +3,7 @@
     <navbar/>   
     <body class="flex">
         <sidebar/>    
-        <RouterView/>
+        <RouterView/>    
     </body>    
     <foot/>
   </template>
@@ -41,8 +41,5 @@
   </script>  
   
   <style scoped>
-  .button{
-    border:3px solid black,
-  } 
   </style>
   
