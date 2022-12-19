@@ -1,26 +1,43 @@
 
   <template>
-    <div class="text-center mx-auto">
-     <h1 class="py-6">Hola {{ userStore.user.email}}</h1>  
-     <h3 class="py-6">Tu correo es : {{ userStore.user.email}}</h3>
-     <h3 class="py-6" >Tu nombre es:: {{}}</h3>
-     <h3 class="py-6">Tu telefono es: {{}}</h3>
-     <h3 class="py-6">Te registraste en: {{}}</h3>
-     <h3 class="py-6">Has archivado XX tareas(podemos agregar un status apra archivadas)</h3>
+    <div class="text-center mx-au  text-sky-900 shadow-xl bg-slate-300 group">
+
+      <div class=" text-slate-300 group bg-sky-900 shadow-xl">
+      <!-- <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1"> -->
+      <h1 class="py-1 text-xl">- • Welcome {{ userStore.user.name}}• -</h1>  
+    </div>
+
+   
+
+     <h3 class="py-4">Tu correo es {{ userStore.user.email}}</h3>
+     <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserEmail">Change your e-mail</button>
+     
+     <h3 class="py-6" >Tu nombre es {{ userStore.user.name }}</h3>
+     <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserName">Change your name</button>
+     
+     <h3 class="py-4">Tu telefono es  {{ userStore.user.phone }}</h3>
+     <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPhone">Change your phone</button>
+     
+     <h3 class="py-4">Te registraste el {{userStore.user.confirmed_at.slice(0,10)}}</h3>
+     <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Delete account</button>
+     
+     <h3 class="py-4">Has archivado {{ tasksStore.getByStatus(4).length }} tareas</h3>
+     <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Go to archived</button>
     </div>
   </template>
   
   <script>
-  import { RouterLink, RouterView} from 'vue-router'
+
   import { mapStores } from "pinia"
   import userStore from '../stores/user'
   import tasksStore from '../stores/tasks'
+
   
   export default{
     computed:{
       ...mapStores(userStore, tasksStore)      
      },
-  }
+    }
   
   </script>  
   

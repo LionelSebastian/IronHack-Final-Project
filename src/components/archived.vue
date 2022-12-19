@@ -1,44 +1,44 @@
 <template>
-    <body class="text-center max-w-full">   
+    <body class="text-center max-w-full bg-slate-300">   
    
     <div class=" text-slate-300 group bg-sky-900 shadow-xl">
       <!-- <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1"> -->
-      <span>- • ARCHIVED TASKS • -</span>  
+      <h1 class="text-xl py-1">- • Archived Tasks • -</h1>
     </div>
 
     <div class="flex justify-center">
     <div class="flex-col">
+
      <div v-for="task in tasksStore.tasks" class="mx-5 my-5 text-base text-sky-900 ">
+      
       <div
         v-if="task.status == 4"
         class="h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-300">
         <div class="">
           {{ task.title }}
         </div>
+
         <div class="">
           <div class="buttons flex justify-center gap-2 mb-2">
+            
             <button>
               <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
-            </button>
-            <!-- checkToDo -->
-            <button @click="updateCurrent(2, task.id)">
-              <svg class="h-4 w-4 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </button>
-            <button @click="updateCurrent(4, task.id)">
-              <svg class="h-4 w-4 text-black"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />  <polyline points="17 21 17 13 7 13 7 21" />  <polyline points="7 3 7 8 15 8" /></svg>
-            </button>
-            <!-- TrashButton -->
+            </button>        
+
             <button @click="borrar(task.id)">
               <svg class="h-4 w-4 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" />
               </svg>
             </button>
           </div>
+
           <div class="text-xs text-slate-500">
             {{ task.inserted_at.slice(0, 10) }} /
             {{ task.inserted_at.slice(11, 19) }}
           </div>
+
         </div>
+
       </div>
     </div>
 </div>

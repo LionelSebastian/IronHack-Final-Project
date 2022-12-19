@@ -27,11 +27,31 @@ export default defineStore("user", {
        
         this.$router.push({ name: "Tasks" }); 
     },
+
     async signOut() {
       const { error } = await supabase.auth.signOut();
       this.user = null;
       this.$router.push({ name: "SignIn" })
     },
+
+    async updateUserName() {
+      const { user, error } = await supabase.auth.update({name: 'juancito'});
+      if (error) throw error;
+      if(data) this.user = data.user;
+    },
+
+    async updateUserEmail() {
+      const { user, error } = await supabase.auth.update({email: 'new@email.com'})  
+      if (error) throw error;
+      if(data) this.user = data.user;
+    },
+
+    async updateUserPhone() {
+      const { user, error } = await supabase.auth.update({email: 'new@email.com'})  
+      if (error) throw error;
+      if(data) this.user = data.user;
+    },
+
 
     async fetchUser() {
       const user = await supabase.auth.user();
