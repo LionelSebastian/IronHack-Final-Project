@@ -1,6 +1,6 @@
 <template>
   <h1>Please Sign up:</h1>
-  <form class="mx-auto text-center" @submit.prevent="register()">
+  <form class="mx-auto my-3.5  text-center" @submit.prevent="register()">
     <input
     type="email"
     placeholder="insert tu email"
@@ -8,15 +8,16 @@
     class="rounded-lg my-1 px-4 bg-slate-200"
     />
     <br />
-    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="insert password" v-model="newPassword" />
+    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="insert a new password" v-model="newPassword" />
     <br />
-    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="insert the same password" v-model="newPassword2" />
+    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="confirm the same password" v-model="newPassword2" />
+    <br />    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="text" placeholder="insert your name" v-model="firstName" />
     <br />
-    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="text" placeholder="insert name" v-model="newPhone" />
+    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="text" placeholder="insert your phone number" v-model="phone" />
     <br />
     <button v-if="newPassword !== null && newPassword !== '' && newPassword === newPassword2" class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="submit">Create account</button>
   </form>
-  <RouterLink to="/">Back to sign in</RouterLink>
+  <RouterLink to="/">Back to Sign in</RouterLink>
 </template>
 
 <script>
@@ -32,7 +33,8 @@ export default {
       newUser: null,
       newPassword: "",
       newPassword2: "",
-      newPhone: null,
+      firstName: null,  
+      phone: null,
     };
   },
   methods: {

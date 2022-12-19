@@ -1,51 +1,47 @@
 <template>
-    <navbar />
-  
-    <body class="text-center bg-slate-400">  
-    
-    <RouterView/>
-        
-    <!-- <RouterLink to="/Dashboard/tasks">Go to Dashboard</RouterLink> -->
-    </body>
+  <header class="bg-blue-400">
+  <navbar />
+  </header>
+  <body class="text-center py-20 bg-slate-400">
+    <RouterView />
+  </body>
+  <!-- <footer class=" bg-blue-800">
     <foot />
-
+  </footer> -->
 </template>
-    
+
 <script>
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterView } from "vue-router";
 import { mapStores } from "pinia";
-import userStore from '../stores/user';
-import navbar from '../components/navbar.vue';
-import foot from '../components/foot.vue';
-import SignIn from '../components/SignIn.vue' 
+import userStore from "../stores/user";
+import navbar from "../components/navbar.vue";
+import foot from "../components/foot.vue";
+import SignIn from "../components/SignIn.vue";
 
-export default{
-    components: {navbar, foot, SignIn},
-    computed:{
-      ...mapStores(userStore)
-     },
-     data(){
-        return {
-            user: null,
-            password: null,
-        }
-     },
-    methods:{
-     login(){
-        this.userStore.signIn(this.user, this.password);
-     }   
+export default {
+  components: { navbar, foot, SignIn },
+  computed: {
+    ...mapStores(userStore),
+  },
+  data() {
+    return {
+      user: null,
+      password: null,
+    };
+  },
+  methods: {
+    login() {
+      this.userStore.signIn(this.user, this.password);
     },
-}
+  },
+};
 </script>
-    
-    
-<style scoped>
-    input{
-        border: solid 2px black
-    }
-    button{
-        border: solid 2px black;
-        margin: 5px;
-    }
-</style>
 
+<style scoped>
+header {
+  height: 5vh;
+} 
+body {
+  height: 95vh;
+} 
+</style>
