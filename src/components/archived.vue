@@ -9,7 +9,7 @@
     <div class="flex justify-center">
     <div class="flex-col">
 
-     <div v-for="task in tasksStore.tasks" class="mx-5 my-5 text-base text-sky-900 ">
+     <div v-for="task in tasksStore.tasks" class=" mx-5 my-5 text-base text-sky-900 ">
       
       <div
         v-if="task.status == 4"

@@ -1,11 +1,11 @@
 <template>
-    <body class="max-w-1/3 justify-between bg-blue-100 py-6 px-3 min-h-full w-1/4">    
+    <body class="bg-blue-100">    
 
         <section>
           <userPanel/>
         </section>
 
-        <section class="mx-auto">    
+        <section>    
           <chart/>
         </section> 
 

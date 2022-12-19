@@ -1,7 +1,7 @@
 <template>
-       <section class=""> 
+       <section class="w-5/6 mx-auto pt-6"> 
           
-          <div class="flex justify-center">      
+          <div class="flex">      
             <RouterLink class="flex justify-around items-center" to="/dashboard/user"  >
               <svg class="h-8 w-8 text-sky-900"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -33,17 +33,17 @@
           </div> 
       </section>  
 
-      <section class="flex justify-center">
+      <section class="flex w-5/6 mx-auto">
 
-        <form class="py-7 gap-2" @submit.prevent="createNew()">
+        <form class=" py-7 gap-2" @submit.prevent="createNew()">
           <textarea
             type="text"
             placeholder="  something to do"
             v-model="title"
-            class="w-5/6 border 1 border-grey rounded-lg"/>
+            class=" w-5/6 border 1 border-grey rounded-lg"/>
           <button
             type="submit"
-            class=" w-2/3 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+            class="w-5/6 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
             CREATE
           </button>
          </form>   

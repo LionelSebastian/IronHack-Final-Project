@@ -1,5 +1,7 @@
 <template>
+  <body  class="w-5/6 mx-auto">
   <Bar :data="data" :options="options" />
+  </body>
 </template>
 
 <script lang="ts">
