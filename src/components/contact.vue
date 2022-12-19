@@ -1,11 +1,11 @@
 <template>
-     <div class="contain mx-auto">
+     <div class="contain mx-auto  bg-slate-300 ">
             <div class="form">
-                <h2>Contact Us</h2>
-                <form name="myForm" action="" method="get" class="" onsubmit="return validateForm()">
+                <h2 class="text-xl py-1 text-center text-slate-300 group bg-sky-900 shadow-xl">- • Contact Us • - </h2>
+                <form name="myForm" action="" method="get" class=" text-sky-900 shadow-xl" onsubmit="return validateForm()">
                     <p class="full-width">
                         <label for="name" class="under">Full Name *</label>
-                        <input type="text" name="fname" placeholder="Enter your full name" id="name" required>
+                        <input class="" type="text" name="fname" placeholder="Enter your full name" id="name" required>
                     </p>
                     <p>
                         <label for="email">Email *</label>
@@ -19,8 +19,8 @@
                         <label for="">Message</label>
                         <textarea name="" id="" cols="30" rows="7" placeholder="Write your message here..."></textarea>
                     </p>
-                    <p class="full-width submit">
-                        <button type="submit" value="Submit" style="cursor: pointer">Submit</button>
+                    <p class="submit">
+                        <button class="rounded-lg text-slate-300 group bg-sky-900 shadow-xl" type="submit" value="Submit" style="cursor: pointer">Submit</button>
                     </p>
                 </form>
             </div>
@@ -83,14 +83,8 @@
   input,
   textarea {
     padding: 0.5em;
-  }
-  
-  button {
-    background: #072AC8;
-    color: white;
-    width: 50%;
-    border: 0;
-  }
+  }  
+
   button:hover {
     background:#072ac8d9;
   }
