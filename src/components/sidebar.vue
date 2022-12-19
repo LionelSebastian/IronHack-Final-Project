@@ -1,5 +1,5 @@
 <template>
-    <body class=" justify-between bg-blue-100 py-6 px-3 min-h-full w-1/4">    
+    <body class=" justify-between bg-slate-300  py-6 px-3 min-h-full w-1/4">    
 
         <section>
           <userPanel/>
