@@ -1,6 +1,6 @@
 <template>
   <navbar />
-  <body class="flex h-screen">
+  <body class="flex min-h-screen">
     <sidebar class="w-1/4" />
     <RouterView class="w-3/4"/>
   </body>

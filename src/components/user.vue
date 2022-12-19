@@ -21,8 +21,11 @@
         <h3 class="text-xl py-6">Te registraste el {{userStore.user.confirmed_at.slice(0,10)}}</h3>
         <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Delete account</button>
         
-        <h3 class="text-xl py-6">Has archivado {{ tasksStore.getByStatus(4).length }} tareas</h3>
+        <h3 class="text-xl py-6">Tienes {{ tasksStore.getByStatus(4).length }} tareas archivadas </h3>
+        <RouterLink to="/dashboard/archived">
         <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Go to archived</button>
+        </RouterLink>
+        
     </div>
   </template>
   
@@ -31,6 +34,7 @@
   import { mapStores } from "pinia"
   import userStore from '../stores/user'
   import tasksStore from '../stores/tasks'
+  import { RouterLink} from "vue-router";
 
   
   export default{

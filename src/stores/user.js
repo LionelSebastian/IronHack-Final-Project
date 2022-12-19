@@ -61,7 +61,7 @@ export default defineStore("user", {
     },
 
     async updateUserPhone() {
-      const { user, error } = await supabase.auth.update({email: 'new@email.com'})  
+      const { user, error } = await supabase.auth.update({phone: 'new@email.com'})  
       if (error) throw error;
       if(data) this.user = data.user;
     },
