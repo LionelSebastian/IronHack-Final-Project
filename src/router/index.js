@@ -8,6 +8,7 @@ import contact from "../components/contact.vue"
 import SignUp from "../components/SignUp.vue"
 import SignIn from "../components/SignIn.vue"
 import archived from "../components/archived.vue"
+import archived from "../components/archived.vue"
 
 
 const router = createRouter({
