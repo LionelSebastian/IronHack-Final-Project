@@ -1,5 +1,5 @@
 <template>
-   <div :class="`flex py-2 px-3.5 ${justify()} bg-blue-400`" >
+   <div :class="`flex py-2 px-3.5 ${justify()} bg-slate-500`" >
    <img src="../../public/LNGteam.png" class="h-7" alt="Logo">
    <button v-if="userStore.user !== null" @click="logOut()" class="cursor-pointer" alt="Sign Out"><img class="h-5" src="../../public/logout-icon.png" alt="Sign Out"></button>
    </div>
