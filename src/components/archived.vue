@@ -3,7 +3,7 @@
    
     <div class=" text-slate-300 group bg-sky-900 shadow-xl">
       <!-- <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1"> -->
-      <h1 class="text-xl py-1">- • Archived Tasks • -</h1>
+      <h1 class="text-2xl py-1">- • Archived Tasks • -</h1>
     </div>
 
     <div class="flex justify-center">

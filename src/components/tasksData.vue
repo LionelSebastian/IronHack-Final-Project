@@ -17,14 +17,14 @@
             </div> 
 
             <div class="w-1/4 text-center pr-1">
-              <div class=" w-full text-center p-3 text-white bg-blue-500 rounded-full">
+              <div class=" w-full text-center p-3 text-white bg-slate-400 rounded-full">
               {{ tasksStore.getByStatus(3).length }}
               </div> 
               <p class="text-sky-900 text-xs pt-2">Done</p>
             </div>
 
             <div class="w-1/4 text-center">
-              <div class="w-full text-center p-3  text-white  bg-blue-600 rounded-full">
+              <div class="w-full text-center p-3  text-white  bg-slate-500 rounded-full">
               {{ tasksStore.getByStatus(4).length  }}
               </div>   
               <p class="text-xs pt-2">Archived</p>

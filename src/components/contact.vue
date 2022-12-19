@@ -1,7 +1,7 @@
 <template>
      <div class="contain mx-auto  bg-slate-300 ">
             <div class="form">
-                <h2 class="text-xl py-1 text-center text-slate-300 group bg-sky-900 shadow-xl">- • Contact Us • - </h2>
+                <h2 class="text-2xl py-1 text-center text-slate-300 group bg-sky-900 shadow-xl">- • Contact Us • - </h2>
                 <form name="myForm" action="" method="get" class=" text-sky-900 shadow-xl" onsubmit="return validateForm()">
                     <p class="full-width">
                         <label for="name" class="under">Full Name *</label>
