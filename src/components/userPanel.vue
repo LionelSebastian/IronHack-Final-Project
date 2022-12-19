@@ -38,7 +38,7 @@
         <form class=" py-7 gap-2" @submit.prevent="createNew()">
           <textarea
             type="text"
-            placeholder="  something to do"
+            placeholder=" something to do"
             v-model="title"
             class=" h-5/6 w-5/6 border 1 border-grey rounded-lg"/>
           <button
