@@ -1,18 +1,22 @@
 <template>
-  <RouterLink to="/">Login</RouterLink>
+  <h1>Please Sign up:</h1>
   <form class="mx-auto text-center" @submit.prevent="register()">
     <input
-      type="email"
-      placeholder="ingresa tu email"
-      v-model="newUser"
-      class=""
+    type="email"
+    placeholder="insert tu email"
+    v-model="newUser"
+    class="rounded-lg my-1 px-4 bg-slate-200"
     />
     <br />
-    <input type="text" placeholder="ingresa password" v-model="newPassword" />
+    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="insert password" v-model="newPassword" />
     <br />
-    <input type="text" placeholder="ingresa nombre" v-model="newPhone" />
-    <button type="submit">ENTER</button>
+    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="insert the same password" v-model="newPassword2" />
+    <br />
+    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="text" placeholder="insert name" v-model="newPhone" />
+    <br />
+    <button v-if="newPassword !== null && newPassword !== '' && newPassword === newPassword2" class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="submit">Create account</button>
   </form>
+  <RouterLink to="/">Back to sign in</RouterLink>
 </template>
 
 <script>
@@ -26,7 +30,8 @@ export default {
   data() {
     return {
       newUser: null,
-      newPassword: null,
+      newPassword: "",
+      newPassword2: "",
       newPhone: null,
     };
   },

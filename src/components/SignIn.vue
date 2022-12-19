@@ -1,5 +1,6 @@
 <template>
-    <form class="mx-auto text-center" @submit.prevent="login()">
+  <h1>Please Sign in:</h1>
+  <form class="mx-auto text-center" @submit.prevent="login()">
       <input
         type="email"
         placeholder="ingresa tu email"
@@ -11,6 +12,7 @@
       <br />
       <button class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="submit">ENTER</button>
     </form>
+    <RouterLink to="/signup" clas="cursor-pointer text-sky-900">Sing up for free<Input:c></Input:c></RouterLink>
 </template>
 
 <script>
