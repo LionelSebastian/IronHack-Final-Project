@@ -14,7 +14,7 @@
       <div
         v-if="task.status == 4"
         class="h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-300">
-        <div class="">
+        <div class="text-lg">
           {{ task.title }}
         </div>
 
