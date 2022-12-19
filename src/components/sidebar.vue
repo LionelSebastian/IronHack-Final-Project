@@ -4,12 +4,15 @@
         <section>
           <userPanel/>
         </section>
+
         <section class="mx-auto">    
           <chart/>
         </section> 
+
         <section>    
           <tasksData/>
         </section>
+        
         <!-- <section class="py-4">
           <task/>
         </section> -->
