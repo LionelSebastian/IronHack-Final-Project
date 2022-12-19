@@ -1,38 +1,36 @@
 
 <template>
-  <body class=" py-5 ">
-       
-        <div class="flex justify-around">
+     <div class="flex justify-around">
 
           <div class="w-1/4 text-center pr-1">
-                <div class="w-full text-center p-3  bg-red-300 rounded-full">
+                <div class="w-full text-center p-3  bg-blue-200 rounded-full">
                 {{ tasksStore.getByStatus(1).length }}
                 </div> 
-                <p class=" font-thin text-xs hover:text-base">Todo</p>
+                <p class=" pt-2 text-xs">Todo</p>
             </div>
 
             <div class="w-1/4 text-center pr-1">
-              <div class=" w-full text-center p-3  bg-green-300 rounded-full">
+              <div class=" w-full text-center p-3  bg-blue-300 rounded-full">
               {{ tasksStore.getByStatus(2).length }}
               </div> 
-              <p class=" font-thin text-xs hover:text-base">Active</p> 
+              <p class="text-xs pt-2">Active</p> 
             </div> 
 
             <div class="w-1/4 text-center pr-1">
-              <div class=" w-full text-center p-3  bg-green-500 rounded-full">
+              <div class=" w-full text-center p-3  bg-blue-500 rounded-full">
               {{ tasksStore.getByStatus(3).length }}
               </div> 
-              <p class=" font-thin text-xs ">Done</p>
+              <p class="text-xs pt-2">Done</p>
             </div>
 
             <div class="w-1/4 text-center">
-              <div class="w-full text-center p-3  bg-blue-500 rounded-full">
+              <div class="w-full text-center p-3  bg-blue-600 rounded-full">
               {{ tasksStore.getByStatus(4).length  }}
               </div>   
-              <p class=" font-thin text-xs hover:">Archived</p>
+              <p class="text-xs pt-2">Archived</p>
             </div>
         </div>
-      </body>
+
 </template>
   
 <script> 

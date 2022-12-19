@@ -11,7 +11,7 @@ export const data = {
       {
         label: 'Tareas completadas',
         backgroundColor: 'blue',
-        data: [, 20, 12, 39, 10, 80]
+        data: [25, 20, 12, 39, 10, 80]
       }
     ]
   }

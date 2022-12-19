@@ -2,8 +2,8 @@
   <template>
     <navbar/>   
     <body class="flex">
-        <sidebar/>    
-        <RouterView/>    
+        <sidebar class="w-1/4"/>    
+        <RouterView class="w-3/4"/>    
     </body>    
     <foot/>
   </template>

@@ -1,18 +1,18 @@
 <template>
-    <body class=" justify-between bg-blue-100 py-6 px-3 min-h-full w-1/4">    
+    <body class="max-w-1/3 justify-between bg-blue-100 py-6 px-3 min-h-full w-1/4">    
 
         <section>
           <userPanel/>
         </section>
-        <section>    
+        <section class="mx-auto">    
           <chart/>
         </section> 
         <section>    
           <tasksData/>
         </section>
-        <section class="py-4">
+        <!-- <section class="py-4">
           <task/>
-        </section>
+        </section> -->
 
     </body>
  </template>

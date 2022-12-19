@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import Dashboard from "../views/Dashboard.vue"
 import Auth from "../views/Auth.vue"
 import tasks from "../components/tasks.vue"
@@ -6,6 +7,7 @@ import user from "../components/user.vue"
 import contact from "../components/contact.vue"
 import SignUp from "../components/SignUp.vue"
 import SignIn from "../components/SignIn.vue"
+import archived from "../components/archived.vue"
 
 
 const router = createRouter({
@@ -33,17 +35,24 @@ const router = createRouter({
       
       children: [
         { name:"Tasks",
-          path: "/tasks",
-            component: tasks,
+          path: "/dashboard/tasks",
+          component: tasks,
          },
 
-        { path: "/dashboard/user",
-             component: user,
+        { name:"User-control-panel",
+          path: "/dashboard/user",
+          component: user,
         },
         
-         { path: "/dashboard/contact",
-            component: contact,
+         { name:"Contact-Us", 
+           path: "/dashboard/contact",
+           component: contact,
          },
+
+         { name:"Archived-Tasks",
+           path: "/dashboard/archived",
+           component: archived,
+      },
       ],
    }, 
   ],
