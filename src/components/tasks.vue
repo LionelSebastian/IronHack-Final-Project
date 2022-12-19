@@ -1,5 +1,6 @@
 <template>
-  <div class="mx-auto">
+  <div class="">
+    <RouterLink to="/"> <button class="border-solid">Volver a Autenticarte</button></RouterLink>
     <form class="py-7 flex gap-2 justify-center" @submit.prevent="createNew()">
       <input
         type="text"
@@ -58,7 +59,7 @@
                   <button @click="updateCurrent(2, task.id)">
                     <svg class="h-4 w-4 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                   </button>
-                  <button>
+                  <button @click="updateCurrent(4, task.id)">
                     <svg class="h-4 w-4 text-black"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />  <polyline points="17 21 17 13 7 13 7 21" />  <polyline points="7 3 7 8 15 8" /></svg>
                   </button>
                   <!-- TrashButton -->
@@ -93,7 +94,7 @@
                   <button @click="updateCurrent(3, task.id)">
                     <svg class="h-4 w-4 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                   </button>
-                  <button>
+                  <button @click="updateCurrent(4, task.id)">
                     <svg class="h-4 w-4 text-black"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />  <polyline points="17 21 17 13 7 13 7 21" />  <polyline points="7 3 7 8 15 8" /></svg>
                   </button>
                   <!-- TrashButton -->
@@ -123,8 +124,7 @@
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                   </button>
-
-                  <button>
+                  <button @click="updateCurrent(4, task.id)">
                     <svg class="h-4 w-4 text-black"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />  <polyline points="17 21 17 13 7 13 7 21" />  <polyline points="7 3 7 8 15 8" /></svg>
                   </button>
                   <button @click="borrar(task.id)">
@@ -186,9 +186,9 @@ export default {
     },
   },
 
-  // mounted() {
-  //   this.tasksStore.fetchTasks();
-  // },
+  mounted() {
+    this.tasksStore.fetchTasks();
+  },
 };
 </script>
 
