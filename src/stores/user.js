@@ -14,6 +14,16 @@ export default defineStore("user", {
       };
     },
   },
+  
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: "user",
+        storage: localStorage,
+      },
+    ],
+  },
 
   actions: {
     async signUp(user, password, firstName, phone) {
@@ -49,21 +59,23 @@ export default defineStore("user", {
     },
 
     async updateUserName() {
-      const { user, error } = await supabase.auth.update({name: 'juancito'});
+      const { user, error } = await supabase.auth.updateUser({name: 'juancito'});
       if (error) throw error;
-      if(data) this.user = data.user;
+      if(user) this.user = user;
     },
 
     async updateUserEmail() {
-      const { user, error } = await supabase.auth.update({email: 'new@email.com'})  
+      const data = await supabase.auth.updateUser({email: 'chofi29@hotmail.com'})  
       // if (error) throw error;
       // if(data) this.user = data.user;
+      console.log(data)
     },
 
     async updateUserPhone() {
-      const { user, error } = await supabase.auth.update({phone: 'new@email.com'})  
-      if (error) throw error;
-      if(data) this.user = data.user;
+     const data = await supabase.auth.updateUser({phone: '684386467'})  
+      // if (error) throw error;
+      // if(data) this.user = data.user;
+      console.log(data)
     },
 
 
@@ -71,17 +83,8 @@ export default defineStore("user", {
       const user = await supabase.auth.user();
       this.user = user;
     },
+ },
 
-  persist: {
-    enabled: true,
-    strategies: [
-      {
-        key: "user",
-        storage: localStorage,
-      },
-    ],
-  },
- }
 });
 
 
