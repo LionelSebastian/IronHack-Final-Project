@@ -4,28 +4,28 @@
 
           <div class="w-1/4 text-center mr-1">
                 <div class="w-full text-center p-2 text-white bg-blue-300 rounded-full">
-                {{ tasksStore.getByStatus(1).length }}
+                {{ this.tasksStore.getByStatus(1).length }}
                 </div> 
                 <p class="text-sky-900 pt-2 text-xs">Todo</p>
             </div>
 
             <div class="w-1/4 text-center mr-1">
               <div class=" w-full text-center p-2 text-white bg-sky-600 rounded-full">
-              {{ tasksStore.getByStatus(2).length }}
+              {{ this.tasksStore.getByStatus(2).length }}
               </div> 
               <p class="text-sky-900 text-xs pt-2">Active</p> 
             </div> 
 
             <div class="w-1/4 text-center mr-1">
               <div class=" w-full text-center p-2 text-white bg-sky-700 rounded-full">
-              {{ tasksStore.getByStatus(3).length }}
+              {{ this.tasksStore.getByStatus(3).length }}
               </div> 
               <p class="text-sky-900 text-xs pt-2">Done</p>
             </div>
 
             <div class="w-1/4 text-center">
               <div class="w-full text-center mr-1 p-2 text-white  bg-sky-800 rounded-full">
-              {{ tasksStore.getByStatus(4).length  }}
+              {{ this.tasksStore.getByStatus(4).length  }}
               </div>   
               <p class="text-sky-900 text-xs pt-2">Archive</p>
             </div>

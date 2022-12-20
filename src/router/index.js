@@ -36,22 +36,22 @@ const router = createRouter({
       
       children: [
         { name:"Tasks",
-          path: "/dashboard/tasks",
+          path: "tasks",
           component: tasks,
          },
 
         { name:"User-control-panel",
-          path: "/dashboard/user",
+          path: "user",
           component: user,
         },
         
          { name:"Contact-Us", 
-           path: "/dashboard/contact",
+           path: "contact",
            component: contact,
          },
 
          { name:"Archived-Tasks",
-           path: "/dashboard/archived",
+           path: "archived",
            component: archived,
       },
       ],

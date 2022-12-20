@@ -1,35 +1,29 @@
+<template>
+  <div class="h-[50px] bg-slate-200">
+    <div class="text-center text-slate-400 pt-2">{{ quote }}</div>
+  </div>
+</template>
 
-  <template>
-    <div class="text-center bg-blue-300">
-     <!-- {{ data.q }} -->
-    </div>
-  </template>
-  
-  <script>
-
-  export default{
-
-    data(){
-      return {
-        data: [],
-      }
+<script>
+export default {
+  data() {
+    return {
+      quote: ""
+    };
+  },
+  methods: {
+     created() {
+       fetch("https://type.fit/api/quotes")
+        .then( (response) => response.json())
+        .then((data) => this.quote = data[Math.floor(Math.random() * data.length)].text
+        )
+        
     },
+  },
+  mounted(){
+    this.created()
+  }
+};
+</script>
 
-  //   methods:{
-  //   async fetchApi() {
-  //     const response = await fetch("https://zenquotes.io/api/quotes/")      
-  //     const data = response.json;
-  //     console.log(data);
-  //     },
-  //   },
-  // mounted() {
-  //     this.fetchApi();
-  //  },
-
-  };
-  </script>  
-  
-  <style scoped>
-  
-  </style>
-  
+<style scoped></style>
