@@ -72,7 +72,7 @@ export default defineStore("user", {
       if (error) { 
         alert(error.message) 
         return 
-      };
+      };    
 
       if(data) this.user = data.user;
       console.log(`data es: ${data}`)
@@ -87,6 +87,10 @@ export default defineStore("user", {
 
        if (error) { 
         alert(error.message) 
+        return 
+      };
+      if(newName === ""){
+        alert('i guess you do have a name, rigth??')
         return 
       };
 

@@ -31,7 +31,17 @@
               <h4 class="font-bold text-l pl-2  text-sky-900">Contact us</h4>
             </RouterLink>  
           </div> 
+          <div class="flex">      
+            <div class="flex justify-around items-center" to="/dashboard/user"  >
+              <button v-if="userStore.user !== null" @click="logOut()" class="cursor-pointer" alt="Sign Out"><img class="h-5" src="../../public/logout-icon.png" alt="Sign Out"></button>
+              <h4 class="font-bold text-l pl-2  text-sky-900">Sign out</h4>
+            </div>
+          </div>
+
       </section>  
+
+      
+  
 
       <section class="flex w-5/6 mx-auto">
 
@@ -71,7 +81,24 @@
     ...mapStores(userStore, tasksStore),
   },
 
+  data(){
+    return {
+      flexStart: "justify-start",
+      spaceBetween: "justify-between",
+    }
+  },
+
   methods: {
+
+    logOut() {
+      this.userStore.signOut();
+    },
+    justify() {
+      if (this.userStore.user !== null) {
+        return this.spaceBetween;
+      }
+      return this.flexStart
+    },
 
     async createNew() {
       await this.tasksStore.createTask(

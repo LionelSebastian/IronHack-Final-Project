@@ -3,7 +3,6 @@
   <main class="flex min-h-screen">
     <sidebar class="w-1/4" />
     <div  class="w-3/4">
-      <navbar />
       <RouterView/>
       <foot />
     </div>

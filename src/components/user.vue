@@ -71,6 +71,11 @@
 
   
   export default{
+    data(){
+      return{
+          newName:"",
+      };
+    },
     computed:{
       ...mapStores(userStore, tasksStore)      
      },

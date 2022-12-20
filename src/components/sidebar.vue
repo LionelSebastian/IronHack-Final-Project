@@ -3,15 +3,15 @@
 
         <section>
           <userPanel/>
-        </section>
-
-        <section>    
-          <chart/>
-        </section> 
+        </section>     
 
         <section>    
           <tasksData/>
         </section>
+        
+        <section>    
+          <chart/>
+        </section> 
         
         <!-- <section class="py-4">
           <task/>
