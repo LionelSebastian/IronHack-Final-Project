@@ -1,7 +1,5 @@
 <template>
-  <header class="bg-blue-400">
-  <navbar />
-  </header>
+
   <body class="text-center py-20 bg-slate-400">
     <RouterView />
   </body>
