@@ -1,6 +1,6 @@
 <template>
   <div class="h-[90vh] bg-slate-300 flex flex-col items-center">
-    <div class="form w-5/6 ">
+    <div class="form w-5/6 mt-12">
       <h2 class="text-2xl py-1 text-center text-sky-900 group shadow-xl">
         - • Contact Us • -
       </h2>
