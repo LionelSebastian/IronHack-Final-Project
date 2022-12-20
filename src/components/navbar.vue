@@ -1,6 +1,6 @@
 <template>
    <div :class="`flex py-2 px-3.5 ${justify()} bg-slate-500`" >
-    <img src="../../public/LNGteam.png" class="h-7" alt="Logo">
+    <img src="../icons/LNDteam2.png" class="h-7" alt="Logo">
     <h1 class="text-slate-200">{{ userStore.user.email }}</h1>
     <button v-if="userStore.user !== null" @click="logOut()" class="cursor-pointer" alt="Sign Out"><img class="h-5" src="../../public/logout-icon.png" alt="Sign Out"></button>
    </div>
