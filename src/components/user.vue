@@ -2,9 +2,9 @@
   <template>
       <div class="h-[90vh] text-center  text-sky-900 shadow-xl bg-slate-300 group">
         
-        <div class=" text-slate-300 group bg-sky-900 shadow-xl">
+        <div class="text-2xl pt-12 text-center text-sky-900 bg-slate-300">
           <!-- <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1"> -->
-          <h1 class="py-1 text-2xl">- • Welcome {{ userStore.user.name}}• -</h1>  
+          <h1 class="py-1 text-2xl">Welcome {{ userStore.user.name}}</h1>  
         </div> 
         
       <!-- <div> -->
