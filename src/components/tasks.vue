@@ -1,8 +1,8 @@
 <template>
   <div>  
-    <navbar />
+    <!-- <navbar /> -->
     <table
-      class="tableWidth mx-auto h-screen bg-slate-400 group space-x-6 border-separate border-spacing-6">
+      class="tableWidth mx-auto h-[90vh] bg-slate-400 group space-x-6 border-separate border-spacing-6">
       <thead class="w-[280px]zz">
         <tr>
           <th class="min-w-1/3 h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
@@ -133,9 +133,9 @@
 
 <script>
 import { mapStores } from "pinia";
-
 import userStore from "../stores/user";
 import tasksStore from "../stores/tasks";
+// import navbar from "./navbar.vue";
 
 export default {
   data() {
@@ -145,6 +145,8 @@ export default {
       status: "1",
     };
   },
+
+  // components: { navbar },
 
   computed: {
     ...mapStores(userStore, tasksStore),

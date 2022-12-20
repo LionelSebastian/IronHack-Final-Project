@@ -1,19 +1,19 @@
 <template>
 
-    <navbar />
-
-    <body class="h-10/12 flex min-h-screen">
-      <sidebar class="w-1/4" />
-      <RouterView class="w-3/4"/>
-    </body>
-
-    <foot />
+  <main class="flex min-h-screen">
+    <sidebar class="w-1/4" />
+    <div  class="w-3/4">
+      <navbar />
+      <RouterView/>
+      <foot />
+    </div>
+  </main>
 
 </template>
 
 <script>
 import { mapStores } from "pinia";
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 import userStore from "../stores/user";
 import tasksStore from "../stores/tasks";
 
