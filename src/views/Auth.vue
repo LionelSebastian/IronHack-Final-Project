@@ -1,5 +1,9 @@
 <template>
-
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
   <body class="text-center py-20 bg-slate-400">
     <RouterView />
   </body>

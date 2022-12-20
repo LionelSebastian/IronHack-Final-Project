@@ -1,5 +1,5 @@
 <template>
-  <div class=" flex justify-center mr-6 mt-12">
+  <div class=" flex justify-center mr-6 mt-12 animate__animated animate__fadeIn">
       <img src="../../src/icons/LNDteamAuth.png" alt="logoLNDauth"
       class="mb-6 pr-3 mt-16">
   </div>
@@ -44,6 +44,9 @@ export default {
 </script>
 
 <style scoped>
+.animate__animated.animate__fadeIn {
+  --animate-duration: 3s;
+}
 input {
   border: solid 2px rgba(4, 4, 4, 0);
 }
