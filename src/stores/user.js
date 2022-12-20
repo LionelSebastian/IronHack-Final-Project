@@ -26,6 +26,7 @@ export default defineStore("user", {
   },
 
   actions: {
+
     async signUp(user, password, firstName, phone) {
       const { data, error } = await supabase.auth.signUp({
         email: user,
@@ -41,73 +42,87 @@ export default defineStore("user", {
       if(data) this.user = data.user;
       console.log(user)
     },
+
     async signIn(user, password){
       //respone maybe better in the begining
         const{data, error}=await supabase.auth.signInWithPassword({
           email: user,
           password: password,
-        const { data, error }=await supabase.auth.signInWithPassword({
-          email: user,
-          password: password,
-        });
+          });
         if (error) { 
           alert(error.message) 
-          return
+          return 
         };
         if(data) this.user = data.user;
         console.log(`data es: ${data}`)
        
         this.$router.push({ name: "Tasks" }); 
     },
-    // async signIn(user, password){
-    //   //respone maybe better in the begining
-    //     const data =await supabase.auth.signInWithPassword({
-    //       email: user,
-    //       password: password,
-    //     });
-    //     if (data.error) console.log(`data es: ${data}`);
-    //     if(data) this.user = data.user;
-       
-    //     this.$router.push({ name: "Tasks" }); 
-    // },
 
+     
     async signOut() {
       const { error } = await supabase.auth.signOut();
       this.user = null;
       this.$router.push({ name: "SignIn" })
     },
 
-    async updateUserName() {
-      const { user, error } = await supabase.auth.update({
-        data: { first_name: 'world' }
-      })
-      // if (error) throw error;
-      // if(user) this.user = user;
-      console.log(data)
-    },
+    async updateUserEmail(newEmail) {
+      const data = await supabase.auth.updateUser({email: newEmail})  
+      // if (error) { 
+      //   alert(error.message) 
+      //   return alert(error.message)
+      // };
+      if(data) this.user = data.user;
+      console.log(`data es: ${data}`)
+      alert('you will need to click the confirmation link on your email :)')      
+     },
 
-    async updateUserEmail() {
-      const data = await supabase.auth.updateUser({email: 'chofi29@hotmail.com'})  
-      // if (error) throw error;
-      // if(data) this.user = data.user;
-      console.log(data)
-
-
-    async updateUserPhone() {
-      const { user, error } = await supabase.auth.update({
-        data: { phone: '666666666' }
+    async updateUserName(newName) {
+      const{data, error} = await supabase.auth.updateUser({
+        data: { 
+          name:newName}
        }) 
-      // if (error) throw error;
-      // if(data) this.user = data.user;
+
+       if (error) { 
+        alert(error.message) 
+        return 
+      };
+
+      if(data) this.user = data.user;
+      console.log(`data es: ${data}`)
+     },
+
+    async updateUserPassword(newPassword) {   
+      const { data, error } = await supabase.auth.updateUser({password: newPassword})
+    
+      if (error) throw error;
+      if(data) this.user = data.user;
       console.log(data)
     },
 
+    async updateUserPhone(newPhone) {
+      const{data, error} = await supabase.auth.updateUser({
+        data: { 
+          phone:newPhone}
+       }) 
 
-    // async fetchUser() {
-    //   const user = await supabase.auth.user();
-    //   this.user = user;
-    // },
- },
+       if (error) { 
+        alert(error.message) 
+        return 
+      };
+
+      if(data) this.user = data.user;
+      console.log(`data es: ${data}`)
+     },
+
+
+
+    async fetchUser() {
+      const user = await supabase.auth.user();
+      this.user = user;
+    },
+    
+  },
 
 });
 

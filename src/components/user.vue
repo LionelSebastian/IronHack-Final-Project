@@ -10,24 +10,49 @@
       <!-- <div> -->
         <h3 class="text-xl pt-16 pb-4">Tu correo es {{ userStore.user.email}}</h3>
         <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserEmail()">Change your e-mail</button>
+        <!-- <form class="mx-auto my-3.5 text-center" @submit.prevent="login()"> -->
+        <input
+          type="email"
+          placeholder="email"
+          v-model="newEmail"
+          class="rounded-lg my-1 px-4 bg-slate-200"
+        />
         <!-- </div> -->
         
-        <h3 class="text-xl py-6" >Tu nombre es {{ userStore.user.name }}</h3>
-        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserName(this.user)">Change your name</button>
-        
-        <h3 class="text-xl py-6">Tu telefono es  {{ userStore.user.phone }}</h3>
-        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPhone">Change your phone</button>
-        
+        <h3 class="text-xl py-6" >Tu nombre es {{ userStore.user.user_metadata.name }}</h3>
+        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserName(newName)">Change your name</button>
+        <input
+        type="text"
+        placeholder="Nuevo nombre de usuario"
+        v-model="newName"
+        class="rounded-lg my-1 px-4 bg-slate-200"
+        />
+
+        <h3 class="text-xl py-6">Tu telefono es  {{ userStore.user.user_metadata.phone }}</h3>
+        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl " @click="userStore.updateUserPhone(newPhone)">Change your phone</button>
+        <input
+        type="text"
+        placeholder="Phone"
+        v-model="newPhone"
+        class="rounded-lg my-1 px-4 bg-slate-200"
+        />
+
+        <h3 class="text-xl py-6">Tu password es  {{ userStore.user.password }}</h3>
+        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPassword(newPassword)">Change your password</button>
+        <input
+        type="text"
+        placeholder="*********"
+        v-model="newPassword"
+        class="rounded-lg my-1 px-4 bg-slate-200"
+        />
+      
         <h3 class="text-xl py-6">Te registraste el {{userStore.user.confirmed_at.slice(0,10)}}</h3>
         <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Delete account</button>
-        
-        <h3 class="text-xl py-6">Tu password es  {{ userStore.user.password }}</h3>
-        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPhone">Change your password</button>
-        
-        <h3 class="text-xl py-6">Tienes {{ tasksStore.getByStatus(4).length }} tareas archivadas </h3>
+               
+        <!-- <h3 class="text-xl py-6">Tienes {{ tasksStore.getByStatus(4).length }} tareas archivadas </h3>
         <RouterLink to="/dashboard/archived">
           <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Go to archived</button>
-        </RouterLink>
+        </RouterLink> -->
       </div>
   </template>
   
