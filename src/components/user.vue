@@ -37,7 +37,7 @@
         class="rounded-lg my-1 px-4 bg-slate-200"
         />
 
-        <h3 class="text-xl py-6">Tu password es  {{ userStore.user.password }}</h3>
+        <h3 class="text-xl py-6">Insert a new password </h3>
         <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPassword(newPassword)">Change your password</button>
         <input
         type="text"
@@ -47,7 +47,7 @@
         />
       
         <h3 class="text-xl py-6">Te registraste el {{userStore.user.confirmed_at.slice(0,10)}}</h3>
-        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Delete account</button>
+        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="alert()">Delete account</button>
                
         <!-- <h3 class="text-xl py-6">Tienes {{ tasksStore.getByStatus(4).length }} tareas archivadas </h3>
         <RouterLink to="/dashboard/archived">
@@ -68,6 +68,11 @@
     computed:{
       ...mapStores(userStore, tasksStore)      
      },
+     methods:{
+      alert(){
+        alert('Good try!! Not your call....Have a great one ;)')    
+      }
+     }
     }
   
   </script>  

@@ -67,11 +67,13 @@ export default defineStore("user", {
     },
 
     async updateUserEmail(newEmail) {
-      const data = await supabase.auth.updateUser({email: newEmail})  
-      // if (error) { 
-      //   alert(error.message) 
-      //   return alert(error.message)
-      // };
+      const {data, error} = await supabase.auth.updateUser({email: newEmail})  
+  
+      if (error) { 
+        alert(error.message) 
+        return 
+      };
+
       if(data) this.user = data.user;
       console.log(`data es: ${data}`)
       alert('you will need to click the confirmation link on your email :)')      
@@ -90,15 +92,21 @@ export default defineStore("user", {
 
       if(data) this.user = data.user;
       console.log(`data es: ${data}`)
+      alert('Tu nombre se ha cambiado con exito:)')      
      },
 
     async updateUserPassword(newPassword) {   
       const { data, error } = await supabase.auth.updateUser({password: newPassword})
     
-      if (error) throw error;
+      if (error) { 
+        alert(error.message) 
+        return 
+      };
+
       if(data) this.user = data.user;
-      console.log(data)
-    },
+      console.log(`data es: ${data}`)
+      alert('Tu password se ha cambiado con exito:)')      
+     },
 
     async updateUserPhone(newPhone) {
       const{data, error} = await supabase.auth.updateUser({
@@ -113,6 +121,7 @@ export default defineStore("user", {
 
       if(data) this.user = data.user;
       console.log(`data es: ${data}`)
+      alert('Tu telefono se ha cambiado con exito:)')      
      },
 
 
