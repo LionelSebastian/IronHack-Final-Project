@@ -1,5 +1,5 @@
 <template>
-  <div class="w-3/4 bg-slate-400 flex border-l-3 border-slate-600">
+  <div class="h-[90vh] bg-slate-400 flex border-l-3 border-slate-600">
     <div class="w-screen flex flex-col justify-center items-center mt-4">
       <div
         class="w-[400px] h-auto py-2 px-2 rounded-lg text-center text-slate-300 group bg-sky-900 shadow-xl">
