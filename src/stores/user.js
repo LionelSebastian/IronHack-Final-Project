@@ -43,15 +43,33 @@ export default defineStore("user", {
     },
     async signIn(user, password){
       //respone maybe better in the begining
+        const{data, error}=await supabase.auth.signInWithPassword({
+          email: user,
+          password: password,
         const { data, error }=await supabase.auth.signInWithPassword({
           email: user,
           password: password,
         });
-        if (error) throw error;
+        if (error) { 
+          alert(error.message) 
+          return
+        };
         if(data) this.user = data.user;
-        console.log(data.user)
+        console.log(`data es: ${data}`)
+       
         this.$router.push({ name: "Tasks" }); 
     },
+    // async signIn(user, password){
+    //   //respone maybe better in the begining
+    //     const data =await supabase.auth.signInWithPassword({
+    //       email: user,
+    //       password: password,
+    //     });
+    //     if (data.error) console.log(`data es: ${data}`);
+    //     if(data) this.user = data.user;
+       
+    //     this.$router.push({ name: "Tasks" }); 
+    // },
 
     async signOut() {
       const { error } = await supabase.auth.signOut();
@@ -85,11 +103,10 @@ export default defineStore("user", {
     },
 
 
-    async fetchUser() {
-      const user = await supabase.auth.user();
-      this.user = user;
-      console.log(user)
-    },
+    // async fetchUser() {
+    //   const user = await supabase.auth.user();
+    //   this.user = user;
+    // },
  },
 
 });

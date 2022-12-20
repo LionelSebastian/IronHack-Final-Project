@@ -1,16 +1,16 @@
 
   <template>
-    <div class="text-center  text-sky-900 shadow-xl bg-slate-300 group">
-
-      <div class=" text-slate-300 group bg-sky-900 shadow-xl">
-      <!-- <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1"> -->
-      <h1 class="py-1 text-2xl">- • Welcome {{ }}• -</h1>  
-    </div> 
-
-    <!-- <div> -->
+      <div class="h-[90vh] text-center  text-sky-900 shadow-xl bg-slate-300 group">
+        
+        <div class=" text-slate-300 group bg-sky-900 shadow-xl">
+          <!-- <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1"> -->
+          <h1 class="py-1 text-2xl">- • Welcome {{ userStore.user.name}}• -</h1>  
+        </div> 
+        
+      <!-- <div> -->
         <h3 class="text-xl pt-16 pb-4">Tu correo es {{ userStore.user.email}}</h3>
         <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserEmail()">Change your e-mail</button>
-    <!-- </div> -->
+        <!-- </div> -->
         
         <h3 class="text-xl py-6" >Tu nombre es {{ userStore.user.name }}</h3>
         <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserName(this.user)">Change your name</button>
@@ -26,10 +26,9 @@
         
         <h3 class="text-xl py-6">Tienes {{ tasksStore.getByStatus(4).length }} tareas archivadas </h3>
         <RouterLink to="/dashboard/archived">
-        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Go to archived</button>
+          <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Go to archived</button>
         </RouterLink>
-        
-    </div>
+      </div>
   </template>
   
   <script>

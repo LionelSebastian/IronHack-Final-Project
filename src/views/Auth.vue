@@ -1,7 +1,5 @@
 <template>
-  <header class="bg-blue-400">
-  <navbar />
-  </header>
+
   <body class="text-center py-20 bg-slate-400">
     <RouterView />
   </body>
@@ -38,10 +36,8 @@ export default {
 </script>
 
 <style scoped>
-header {
-  height: 5vh;
-} 
+
 body {
-  height: 95vh;
+  height: 100vh;
 } 
 </style>
