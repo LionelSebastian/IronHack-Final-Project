@@ -34,7 +34,7 @@
           <div v-for="task in tasksStore.tasks" class="min-w-1/3 h-auto my-5 text-base text-sky-900">
             <div
               v-if="task.status == 1"
-              class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-300">
+              class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-100">
               <div class="">
                 {{ task.title }}
               </div>
@@ -70,7 +70,7 @@
           <div v-for="task in tasksStore.tasks" class="min-w-1/3 my-5 text-base text-sky-900 ">
             <div
               v-if="task.status == 2"
-              class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-300">
+              class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-100">
               <div>
                 {{ task.title }}
               </div>
@@ -104,7 +104,7 @@
           <div v-for="task in tasksStore.tasks" class="min-w-1/3 my-5 text-base text-sky-900 ">
             <div
               v-if="task.status == 3"
-              class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-300">
+              class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-100">
               <div>
                 {{ task.title }}
               </div>
