@@ -1,93 +1,108 @@
 <template>
-     <div class="contain mx-auto  bg-slate-300 ">
-            <div class="form">
-                <h2 class="text-2xl py-1 text-center text-slate-300 group bg-sky-900 shadow-xl">- • Contact Us • - </h2>
-                <form name="myForm" action="" method="get" class=" text-sky-900 shadow-xl" onsubmit="return validateForm()">
-                    <p class="full-width">
-                        <label for="name" class="under">Full Name *</label>
-                        <input class="" type="text" name="fname" placeholder="Enter your full name" id="name" required>
-                    </p>
-                    <p>
-                        <label for="email">Email *</label>
-                        <input type="email" name="email" placeholder="Enter you email adress" id="email" required>
-                    </p>
-                    <p>
-                        <label for="phone">Phone *</label>
-                        <input type="tel" name="phone" placeholder="Enter your phone number" id="phone" required>
-                    </p>
-                    <p class="full-width">
-                        <label for="">Message</label>
-                        <textarea name="" id="" cols="30" rows="7" placeholder="Write your message here..."></textarea>
-                    </p>
-                    <p class="submit">
-                        <button class="rounded-lg text-slate-300 group bg-sky-900 shadow-xl" type="submit" value="Submit" style="cursor: pointer">Submit</button>
-                    </p>
-                </form>
-            </div>
-       </div>
-       
- </template>
-    
- <script> 
-    import { RouterLink } from 'vue-router'
+  <div class=" bg-slate-300 flex flex-col items-center">
+    <div class="form w-5/6 ">
+      <h2 class="text-2xl py-1 text-center text-sky-900 group shadow-xl">
+        - • Contact Us • -
+      </h2>
+      <form
+        name="myForm"
+        action=""
+        method="get"
+        class="text-sky-900 shadow-xl w-full p-5"
+        onsubmit="return validateForm()"
+      >
+        <p class="full-width">
+          <label for="name" class="under">Full Name *</label>
+          <input
+            class=""
+            type="text"
+            name="fname"
+            placeholder="Enter your full name"
+            id="name"
+            required
+          />
+        </p>
+        <p>
+          <label for="email">Email *</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter you email adress"
+            id="email"
+            required
+          />
+        </p>
+        <p>
+          <label for="phone">Phone *</label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your phone number"
+            id="phone"
+            required
+          />
+        </p>
+        <p class="full-width">
+          <label for="">Message</label>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="7"
+            placeholder="Write your message here..."
+          ></textarea>
+        </p>
+        <p class="submit ">
+          <button
+            class="rounded-lg text-slate-300 group bg-sky-900 shadow-xl"
+            type="submit"
+            value="Submit"
+            style="cursor: pointer"
+          >
+            Submit
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+</template>
 
-    export default{ 
- 
-    }
- </script>
-    
-    
- <style scoped>
-     * {
-    box-sizing: border-box;
-  }
+<script>
+import { RouterLink } from "vue-router";
 
-  input, textarea {
-    background-color: #6b708d10;
-    border: 0!important;
-    outline: 0!important;
-  } 
+export default {};
+</script>
 
+<style scoped>
 
-  @media (max-width: 768px) {
+input,
+textarea {
+  background-color: #6b708d10;
+  border: 0 !important;
+  outline: 0 !important;
+}
 
-    .contain {     
-      padding: 0;
-    }
-    .contain h2 {
-      margin-bottom: 50px;
-    }
+input,
+textarea,
+button {
+  width: 100%;
+}
 
-  
-  }
-  
-  input,
-  textarea,
-  button {
-    width: 100%;
-  }
-  
-  form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-  }
-  form label {
-    display: block;
-  }
-   
-  .full-width {
-    grid-column: 1 / 3;
-  }  
-  button,
-  input,
-  textarea {
-    padding: 0.5em;
-  }  
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+form label {
+  display: block;
+}
 
-  button:hover {
-    background:#072ac8d9;
-  }
-
- </style>
-    
+.full-width {
+  grid-column: 1 / 3;
+}
+button,
+input,
+textarea {
+  padding: 0.5em;
+}
+</style>

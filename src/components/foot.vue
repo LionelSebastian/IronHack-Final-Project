@@ -1,6 +1,6 @@
 <template>
-  <div class="h-[50px] bg-slate-200">
-    <div class="text-center text-slate-400 pt-2">{{ quote }}</div>
+  <div class="h-[40px] bg-slate-200">
+    <div class="text-center text-slate-400 pt-2 italic">"{{ quote }}"</div>
   </div>
 </template>
 
