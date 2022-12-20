@@ -6,7 +6,7 @@
         - • ARCHIVED • -
       </div>
       <div
-        v-for="task in tasksStore.tasks"
+        v-for="task in tasksStore.getByStatus(4)"
         class="w-[400px] h-auto bg-white bg-opacity-50 rounded-xl overflow-hidden shadow-lg m-4 pt-3 px-3 pb-1 text-center">
         <div v-if="tasksStore.getByStatus(4).length" class="">
           <div class="text-sky-900 font-semibold pb-2">{{ task.title }}</div>
@@ -61,6 +61,7 @@
 import { mapStores } from "pinia";
 import userStore from "../stores/user";
 import tasksStore from "../stores/tasks";
+
 export default {
   data() {
     return {};

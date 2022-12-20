@@ -10,11 +10,14 @@ export default defineStore("tasks", {
   },
 
  getters: {
-    getByStatus(state){
-      return function (status){
-        return state.tasks.filter((task) => task.status === status);
-      };
-    },
+    getByStatus: (state)=>{
+    return (status)=>state.tasks.filter((task) => task.status === status);
+  }
+    // getByStatus(state){
+    //   return function (status){
+    //     return state.tasks.filter((task) => task.status === status);
+    //   };
+    // },
   },
 
   actions: {

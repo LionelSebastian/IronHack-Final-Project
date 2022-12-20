@@ -1,23 +1,23 @@
 <template>
-  <div class="">  
-
+  <div>  
+    <navbar />
     <table
       class="tableWidth mx-auto h-screen bg-slate-400 group space-x-6 border-separate border-spacing-6">
       <thead class="w-[280px]zz">
         <tr>
-          <th class="w-[280px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+          <th class="min-w-1/3 h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
           <div clas="flex tableHead"> 
             <img src="../../src/icons/clockwise-icon.svg" alt="clockIcon" class="w-5 ml-1 tableIcon">
             <span>- • TO DO • -</span>
           </div>
           </th>
-          <th class="w-[280px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+          <th class="min-w-1/3 h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
           <div clas="flex tableHead"> 
             <img src="../../src/icons/inProgress-icon.svg" alt="clockIcon" class="w-7 ml-1 tableIcon">
             <span>- • ACTIVE • -</span>
           </div>
           </th>
-          <th class="w-[280px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+          <th class="min-w-1/3 h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
           <div clas="flex tableHead"> 
             <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1 tableIcon">
             <span>- • DONE • -</span>
@@ -32,7 +32,7 @@
           <div v-for="task in tasksStore.tasks" class="w-[280px] h-auto my-5 text-base text-sky-900">
             <div
               v-if="task.status == 1"
-              class="w-[280px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-300">
+              class="min-w-1/3 h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-300">
               <div class="">
                 {{ task.title }}
               </div>
@@ -145,6 +145,7 @@ export default {
       status: "1",
     };
   },
+
   computed: {
     ...mapStores(userStore, tasksStore),
   },
