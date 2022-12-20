@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center mr-6 mt-12">
       <img src="../../src/icons/LNDteamAuth.png" alt="logoLNDauth"
-      class="mb-6 pr-3 mt-9">
+      class="mb-6 pr-3 mt-16">
   </div>
   <h1 class="text-slate-600">Please Sign up:</h1>
   <form class="mx-auto my-3.5  text-center" @submit.prevent="register()">

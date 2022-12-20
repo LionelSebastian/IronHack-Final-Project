@@ -36,10 +36,8 @@ export default {
 </script>
 
 <style scoped>
-header {
-  height: 5vh;
-} 
+
 body {
-  height: 95vh;
+  height: 100vh;
 } 
 </style>
