@@ -39,16 +39,17 @@ export default defineStore("user", {
       });
       if (error) throw error;
       if(data) this.user = data.user;
+      console.log(user)
     },
     async signIn(user, password){
       //respone maybe better in the begining
-        const{data, error}=await supabase.auth.signInWithPassword({
-          email: "lionel.cioffi@gmail.com",
-          password: "lionel29",
+        const { data, error }=await supabase.auth.signInWithPassword({
+          email: user,
+          password: password,
         });
         if (error) throw error;
         if(data) this.user = data.user;
-       
+        console.log(data.user)
         this.$router.push({ name: "Tasks" }); 
     },
 
@@ -59,9 +60,12 @@ export default defineStore("user", {
     },
 
     async updateUserName() {
-      const { user, error } = await supabase.auth.updateUser({name: 'juancito'});
-      if (error) throw error;
-      if(user) this.user = user;
+      const { user, error } = await supabase.auth.update({
+        data: { first_name: 'world' }
+      })
+      // if (error) throw error;
+      // if(user) this.user = user;
+      console.log(data)
     },
 
     async updateUserEmail() {
@@ -69,10 +73,12 @@ export default defineStore("user", {
       // if (error) throw error;
       // if(data) this.user = data.user;
       console.log(data)
-    },
+
 
     async updateUserPhone() {
-     const data = await supabase.auth.updateUser({phone: '684386467'})  
+      const { user, error } = await supabase.auth.update({
+        data: { phone: '666666666' }
+       }) 
       // if (error) throw error;
       // if(data) this.user = data.user;
       console.log(data)
@@ -82,6 +88,7 @@ export default defineStore("user", {
     async fetchUser() {
       const user = await supabase.auth.user();
       this.user = user;
+      console.log(user)
     },
  },
 

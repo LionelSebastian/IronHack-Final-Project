@@ -32,7 +32,6 @@ export default {
   },
   mounted() {
     this.tasksStore.fetchTasks();
-    console.log(tasksStore.tasks);
   },
 };
 </script>

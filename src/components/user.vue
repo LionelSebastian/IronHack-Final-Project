@@ -4,7 +4,7 @@
 
       <div class=" text-slate-300 group bg-sky-900 shadow-xl">
       <!-- <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1"> -->
-      <h1 class="py-1 text-2xl">- • Welcome {{ userStore.user.name}}• -</h1>  
+      <h1 class="py-1 text-2xl">- • Welcome {{ }}• -</h1>  
     </div> 
 
     <!-- <div> -->
@@ -20,6 +20,9 @@
         
         <h3 class="text-xl py-6">Te registraste el {{userStore.user.confirmed_at.slice(0,10)}}</h3>
         <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="">Delete account</button>
+        
+        <h3 class="text-xl py-6">Tu password es  {{ userStore.user.password }}</h3>
+        <button class=" w-1/2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPhone">Change your password</button>
         
         <h3 class="text-xl py-6">Tienes {{ tasksStore.getByStatus(4).length }} tareas archivadas </h3>
         <RouterLink to="/dashboard/archived">
