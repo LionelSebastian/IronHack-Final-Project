@@ -1,8 +1,10 @@
 <template>
-  <div>  
-    <!-- <navbar /> -->
+  <div class="">  
+    <h2 class="text-2xl py-5 text-center text-sky-900 bg-slate-300">
+        Tasks
+      </h2>
     <table
-      class="tableWidth px-10 h-[90vh] bg-slate-400 group space-x-6 border-separate border-spacing-6">
+      class="tableWidth px-10 h-[90vh] bg-slate-300 group space-x-6 border-separate border-spacing-6">
       <thead class="">
         <tr>
           <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">

@@ -1,5 +1,5 @@
 <template>
-    <body class="bg-blue-100">    
+    <body class="bg-slate-300 drop-shadow-2xl">    
 
         <section>
           <userPanel/>

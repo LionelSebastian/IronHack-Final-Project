@@ -1,14 +1,14 @@
 <template>
   <div class="h-[90vh] bg-slate-300 flex flex-col items-center">
-    <div class="form w-5/6 ">
-      <h2 class="text-2xl py-1 text-center text-sky-900 group shadow-xl">
-        - • Contact Us • -
+    <div class="form w-5/6 mt-12">
+      <h2 class="text-2xl py-5 text-center text-sky-900 group shadow-xl">
+        Contact Us
       </h2>
       <form
         name="myForm"
         action=""
         method="get"
-        class="text-sky-900 shadow-xl w-full p-5"
+        class="text-sky-900 bg-slate-200 rounded-lg shadow-xl w-full p-5"
         onsubmit="return validateForm()"
       >
         <p class="full-width">
@@ -52,13 +52,12 @@
             placeholder="Write your message here..."
           ></textarea>
         </p>
-        <p class="submit ">
+        <p class="submit full-width">
           <button
             class="rounded-lg text-slate-300 group bg-sky-900 shadow-xl"
             type="submit"
             value="Submit"
-            style="cursor: pointer"
-          >
+            style="cursor: pointer">
             Submit
           </button>
         </p>
