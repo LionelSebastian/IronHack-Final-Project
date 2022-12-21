@@ -60,14 +60,15 @@
                   {{ task.inserted_at.slice(11, 19) }}
                 </div>
                 
+                <transition>
                   <div v-if="this.taskId===task.id" class="mx-auto flex">
-                    
-                    <input v-model="task.title" class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
-                    <button @click="updateTaskTitle(task.title,task.id)">
-                      <svg class="h-4 w-4 mt-3 ml-[-55px]
-                       text-black"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="12" y1="8" x2="8" y2="12" />  <line x1="12" y1="8" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
-                    </button>
+                      <input v-model="task.title" class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
+                      <button @click="updateTaskTitle(task.title,task.id)">
+                        <svg class="h-4 w-4 mt-3 ml-[-55px]
+                        text-black"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="12" y1="8" x2="8" y2="12" />  <line x1="12" y1="8" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
+                      </button>
                   </div>
+                </transition>
                 
               </div>
               </div>
@@ -83,7 +84,7 @@
                 {{ task.title }}
               </div>
               <div class="buttons flex justify-center gap-2 mb-2">
-                  <button>
+                  <button   @click="editButton(task.id)">
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                   </button>
@@ -104,6 +105,15 @@
                 {{ task.inserted_at.slice(0, 10) }} /
                 {{ task.inserted_at.slice(11, 19) }}
               </div>
+              <transition>
+                  <div v-if="this.taskId===task.id" class="mx-auto flex">
+                      <input v-model="task.title" class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
+                      <button @click="updateTaskTitle(task.title,task.id)">
+                        <svg class="h-4 w-4 mt-3 ml-[-55px]
+                        text-black"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="12" y1="8" x2="8" y2="12" />  <line x1="12" y1="8" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
+                      </button>
+                  </div>
+                </transition>
             </div>
           </div>
         </th>
@@ -117,7 +127,7 @@
                 {{ task.title }}
               </div>
               <div class="buttons flex justify-center gap-2 mb-2">
-                  <button>
+                  <button   @click="editButton(task.id)">
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                   </button>
@@ -133,6 +143,15 @@
                 {{ task.inserted_at.slice(0, 10) }} /
                 {{ task.inserted_at.slice(11, 19) }}
               </div>
+              <transition>
+                  <div v-if="this.taskId===task.id" class="mx-auto flex">
+                      <input v-model="task.title" class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
+                      <button @click="updateTaskTitle(task.title,task.id)">
+                        <svg class="h-4 w-4 mt-3 ml-[-55px]
+                        text-black"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="12" y1="8" x2="8" y2="12" />  <line x1="12" y1="8" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
+                      </button>
+                  </div>
+                </transition>
             </div>
           </div>
         </th>
@@ -198,6 +217,15 @@ export default {
 </script>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 .displayInput{
   display: block !important;
 }
