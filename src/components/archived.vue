@@ -1,10 +1,13 @@
 <template>
-  <div class="h-[95vh] py-5 bg-slate-300 flex border-l-3 border-slate-600">
-    <div class="w-screen flex flex-col items-center mt-4">
-      <div
-        class="w-[400px] h-auto mb-2 py-2 px-2 rounded-lg text-center text-slate-300 group bg-sky-900 shadow-xl">
+  <div class="h-[95vh] py-5 text-center bg-slate-300 border-l-3 border-slate-600">
+    <div class="w-1/3 mx-auto mb-4 flex flex-col items-center">
+      <h1 class="text-2xl text-center text-sky-900 bg-slate-300">
+        Archived tasks
+    </h1>
+      <!-- <div
+        class="w-[400px] h-auto my-2 py-2 px-2 rounded-lg text-center text-slate-300 group bg-sky-900 shadow-xl">
         - • ARCHIVED • -
-      </div>
+      </div> -->
       <div
         v-for="task in tasksStore.getByStatus(4)"
         class="w-[400px] h-auto bg-white bg-opacity-50 rounded-xl overflow-hidden shadow-lg m-4 pt-3 px-3 pb-1 text-center">
