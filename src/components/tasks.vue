@@ -63,8 +63,8 @@
                 
                   <div v-if="inputField" class="mx-auto flex">
                     
-                    <input class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
-                    <button>
+                    <input v-model="task.title" class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
+                    <button @click="updateTaskTitle(task.title,task.id)">
                       <svg class="h-4 w-4 mt-3 ml-[-55px]
                        text-black"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="12" y1="8" x2="8" y2="12" />  <line x1="12" y1="8" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
                     </button>
@@ -165,8 +165,16 @@ export default {
   },
 
   methods: {  
+
+    async updateTaskTitle (title, id){
+      // this.task.title = this.updateTitle
+      await this.tasksStore.updateTitle(title,id);
+      await this.tasksStore.fetchTasks();
+      this.editButton()
+
+    },
     editButton() {
-        this.inputField = true
+        this.inputField = !this.inputField
     },
 
 

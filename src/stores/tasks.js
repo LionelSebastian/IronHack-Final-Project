@@ -40,6 +40,12 @@ export default defineStore("tasks", {
         .update({ status: status })
         .eq("id", id);
     },
+    async updateTitle(title, id) {
+      const { error } = await supabase
+        .from("tasks")
+        .update({ title: title })
+        .eq("id", id);
+    },
     async deleteTask(id) {
       const { error } = await supabase
       .from("tasks")
