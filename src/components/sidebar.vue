@@ -1,6 +1,8 @@
 <template>
-    <body class="bg-slate-300 drop-shadow-2xl">    
-
+    <body class="bg-slate-300 h-[100vh] drop-shadow-2xl">    
+        <section>
+          <navbar />
+        </section>  
         <section>
           <userPanel/>
         </section>
@@ -27,10 +29,11 @@ import userPanel from "./userPanel.vue";
 import task from "../components/task.vue"
 import chart from "../components/chart.vue"
 import tasksData from "../components/tasksData.vue"
+import navbar from "./navbar.vue";
               
 
 export default { 
-  components:{ task, chart, tasksData, userPanel },
+  components:{ task, chart, tasksData, userPanel, navbar },
  };
 
  </script>  

@@ -1,9 +1,10 @@
 <template>
-  <div class="h-[90vh] bg-slate-300 flex flex-col items-center">
-    <div class="form w-5/6 mt-12">
-      <h2 class="text-2xl py-5 text-center text-sky-900">
+  <div class="h-[95vh] py-5 bg-slate-300 flex flex-col items-center">
+    <div class="form w-5/6">
+      <h1 class="mb-10 text-2xl text-center text-sky-900">
         Contact Us
-      </h2>
+      </h1>
+      
       <form
         name="myForm"
         action=""
