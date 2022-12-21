@@ -10,7 +10,7 @@ export const data = {
     datasets: [
       {
         label: 'Tareas completadas',
-        backgroundColor: 'blue',
+        backgroundColor: '#2d679c',
         data: [20, 20, 12, 39, 10, 80]
       }
     ]
