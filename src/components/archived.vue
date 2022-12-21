@@ -1,8 +1,8 @@
 <template>
-  <div class="h-[95vh] bg-slate-300 flex border-l-3 border-slate-600">
-    <div class="w-screen flex flex-col justify-center items-center mt-4">
+  <div class="h-[95vh] py-5 bg-slate-300 flex border-l-3 border-slate-600">
+    <div class="w-screen flex flex-col items-center mt-4">
       <div
-        class="w-[400px] h-auto py-2 px-2 rounded-lg text-center text-slate-300 group bg-sky-900 shadow-xl">
+        class="w-[400px] h-auto mb-2 py-2 px-2 rounded-lg text-center text-slate-300 group bg-sky-900 shadow-xl">
         - • ARCHIVED • -
       </div>
       <div
