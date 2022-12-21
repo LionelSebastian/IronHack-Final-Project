@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-4 m-5 justify-between bg-slate-300">
+  <div class="flex gap-4 m-6 justify-between bg-slate-300">
     <h1 class="text-sky-900">{{ userStore.user.user_metadata.name }}</h1>
     <button
       v-if="userStore.user !== null"

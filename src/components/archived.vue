@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[95vh] py-5 text-center bg-slate-300 border-l-3 border-slate-600">
+  <div class="h-[95vh] overflow-y-auto py-5 text-center bg-slate-300 border-l-3 border-slate-600">
     <div class="w-1/3 mx-auto mb-4 flex flex-col items-center">
       <h1 class="text-2xl text-center text-sky-900 bg-slate-300">
         Archived tasks
