@@ -1,8 +1,8 @@
 <template>
-  <div class=" h-[95vh] bg-slate-300">  
-    <h2 class="text-2xl py-5 text-center text-sky-900 bg-slate-300">
+  <div class="h-[95vh] py-5 text-center text-sky-900 shadow-xl bg-slate-300 group">  
+    <h2 class="text-2xl text-center text-sky-900 bg-slate-300">
         Tasks
-      </h2>
+    </h2>
     <table class="tableWidth px-10 bg-slate-300 group space-x-6 border-separate border-spacing-6">
       <thead class="">
         <tr>
