@@ -166,10 +166,12 @@ export default {
   methods: {  
 
     async updateTaskTitle (title, id){
-      // this.task.title = this.updateTitle
-      await this.tasksStore.updateTitle(title,id);
-      await this.tasksStore.fetchTasks();
-      this.editButton()
+      if(this.tasksStore.id==task.id){
+
+        await this.tasksStore.updateTitle(title,id);
+        await this.tasksStore.fetchTasks();
+        this.editButton()
+      }
 
     },
     editButton() {
