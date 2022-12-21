@@ -1,27 +1,27 @@
 <template>
-  <div class="h-[95vh] py-5 text-center text-sky-900 shadow-xl bg-slate-300 group">  
+  <div class="h-[95vh] overflow-y-auto py-5 text-center text-sky-900 shadow-xl bg-slate-300 group">  
     <h1 class="text-2xl text-center text-sky-900 bg-slate-300">
         Tasks
     </h1>
     <table class="tableWidth py-2 px-10 bg-slate-300 group space-x-6 border-separate border-spacing-6">
       <thead class="">
         <tr>
-          <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+          <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900  shadow-xl">
           <div clas="flex tableHead"> 
-            <img src="../../src/icons/clockwise-icon.svg" alt="clockIcon" class="w-5 ml-1 tableIcon">
-            <span>- • TO DO • -</span>
+          <span>🕥</span>
+            <span class="font-normal"> • TO DO • </span>
+          </div>
+          </th>
+          <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+          <div clas="flex tableHead">
+          <span>⚙</span>
+            <span class="font-normal"> • ACTIVE • </span>
           </div>
           </th>
           <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
           <div clas="flex tableHead"> 
-            <img src="../../src/icons/inProgress-icon.svg" alt="clockIcon" class="w-7 ml-1 tableIcon">
-            <span>- • ACTIVE • -</span>
-          </div>
-          </th>
-          <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
-          <div clas="flex tableHead"> 
-            <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1 tableIcon">
-            <span>- • DONE • -</span>
+            <span>🏁</span>
+            <span class="font-normal"> • DONE • </span>
           </div>
           </th>
 
@@ -30,7 +30,7 @@
 
       <tbody class="align-top">
         <th>
-          <div v-for="task in tasksStore.tasks" class="min-w-1/3 my-5 text-base text-sky-900">
+          <div v-for="task in tasksStore.tasks" class=" min-w-1/3 my-5 text-base text-sky-900">
             <div
               v-if="task.status == 1"
               class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-100">
