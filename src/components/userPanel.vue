@@ -36,7 +36,7 @@
 
       <section class="">
         <div class="">
-          <form class=" py-7 mx-5 w-auto" @submit.prevent="createNew()">
+          <form class=" py-7 mx-5 w-[315px]" @submit.prevent="createNew()">
             <textarea
               type="text"
               placeholder=" something to do"
