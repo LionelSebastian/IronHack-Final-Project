@@ -9,9 +9,9 @@
         type="email"
         placeholder="Insert your new e-mail"
         v-model="newEmail"
-        class="w-1/4 h-8 px-4 rounded-lg bg-slate-200"
+        class="w-[250px] h-8 px-4 rounded-lg bg-slate-200"
         />
-        <button class="w-1/6 h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserEmail()">Change email</button>
+        <button class="w-[150px] h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserEmail()">Change email</button>
         <h3 class="w-full text-base">Your email is: {{ userStore.user.email}}</h3>      
       </div>
 
@@ -20,9 +20,9 @@
         type="text"
         placeholder="Insert your new user name"
         v-model="newName"
-        class="w-1/4 h-8 px-4 rounded-lg bg-slate-200"
+        class="w-[250px] h-8 px-4 rounded-lg bg-slate-200"
         />
-        <button class="w-1/6 h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserName(newName)">Change name</button>
+        <button class="w-[150px] h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserName(newName)">Change name</button>
         <h3 class="w-full text-base">Your user name is: {{ userStore.user.user_metadata.name }}</h3>      
       </div>
 
@@ -31,9 +31,9 @@
         type="text"
         placeholder="Insert your new phone name"
         v-model="newPhone"
-        class="w-1/4 h-8 px-4 rounded-lg bg-slate-200"
+        class="w-[250px] h-8  px-4 rounded-lg bg-slate-200"
         />
-        <button class="w-1/6 h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPhone(newPhone)">Change phone</button>
+        <button class="w-[150px] h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPhone(newPhone)">Change phone</button>
         <h3 class="w-full text-base">Your phone number is:  {{ userStore.user.user_metadata.phone }}</h3>      
       </div> 
 
@@ -42,15 +42,15 @@
         type="password"
         placeholder="Insert your new password"
         v-model="newPassword"
-        class="w-1/4 h-8 px-4 rounded-lg bg-slate-200"
+        class="w-[250px] h-8 px-4 rounded-lg bg-slate-200"
         />
-        <button class="w-1/6 h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPassword(newPassword)">Change password</button>
+        <button class="w-[150px] h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="userStore.updateUserPassword(newPassword)">Change password</button>
         <h3 class="w-full text-base">Change your password</h3>     
       </div>
           
       <h3 class="text-xl py-6">You are registered since: {{userStore.user.confirmed_at.slice(0,10)}}</h3>
       
-      <button class="w-1/4 h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="alert()">Delete account</button>
+      <button class="w-[150px] h-8 rounded-lg text-slate-300 group bg-sky-900 shadow-xl" @click="alert()">Delete account</button>
 
     </div>    
   </template>
