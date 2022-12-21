@@ -2,7 +2,7 @@
   <template>
     <div class="h-[95vh] py-5 text-center text-sky-900 shadow-xl bg-slate-300 group">
 
-      <h1 class="text-2xl m-10">User data{{ userStore.user.name}}</h1>  
+      <h1 class="text-2xl">User data{{ userStore.user.name}}</h1>  
 
       <div class="my-10 flex flex-wrap justify-center items-center gap-4">
         <input
