@@ -1,23 +1,23 @@
 
 <template>
-     <div class="w-5/6 mx-auto py-5 flex justify-around">
+     <div class="mx-7 py-5 flex w-[255px]">
         <RouterLink class="w-1/4 text-center mr-1" to="/dashboard/tasks">
           
-                <div class="w-full text-center p-2 text-white bg-blue-300 rounded-full">
+                <div class="w-full text-center p-1 text-white bg-blue-300 rounded-lg">
                 {{ this.tasksStore.getByStatus(1).length }}
                 </div> 
-                <p class="text-sky-900 pt-2 text-xs">Todo</p>
+                <p class="text-sky-900 pt-2 text-xs">To do</p>
           </RouterLink>
 
             <RouterLink to="/dashboard/tasks" class="w-1/4 text-center mr-1">
-              <div class=" w-full text-center p-2 text-white bg-sky-600 rounded-full">
+              <div class=" w-full text-center p-1 text-white bg-sky-600 rounded-lg">
               {{ this.tasksStore.getByStatus(2).length }}
               </div> 
               <p class="text-sky-900 text-xs pt-2">Active</p> 
             </RouterLink> 
 
             <RouterLink to="/dashboard/tasks" class="w-1/4 text-center mr-1">
-              <div class=" w-full text-center p-2 text-white bg-sky-700 rounded-full">
+              <div class=" w-full text-center p-1 text-white bg-sky-700 rounded-lg">
               {{ this.tasksStore.getByStatus(3).length }}
               </div> 
               <p class="text-sky-900 text-xs pt-2">Done</p>
@@ -25,7 +25,7 @@
    
 
             <RouterLink to="/dashboard/archived" class="w-1/4 text-center">
-              <div class="w-full text-center mr-1 p-2 text-white  bg-sky-800 rounded-full">
+              <div class="w-full text-center mr-1 p-1 text-white  bg-sky-800 rounded-lg">
               {{ this.tasksStore.getByStatus(4).length  }}
               </div>   
               <p class="text-sky-900 text-xs pt-2">Archive</p>
