@@ -39,7 +39,7 @@
               </div>
               <div>
                 <div class="buttons flex justify-center gap-2 mb-2">
-                  <button @click="editButton">
+                  <button  @click="editButton(task.id)">
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                   </button>
@@ -60,7 +60,7 @@
                   {{ task.inserted_at.slice(11, 19) }}
                 </div>
                 
-                  <div v-if="inputField" class="mx-auto flex">
+                  <div v-if="this.taskId===task.id" class="mx-auto flex">
                     
                     <input v-model="task.title" class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
                     <button @click="updateTaskTitle(task.title,task.id)">
@@ -150,6 +150,7 @@ import tasksStore from "../stores/tasks";
 export default {
   data() {
     return {
+      taskId: null,
       inputField: false,
       user_id: null,
       title: null,
@@ -166,15 +167,15 @@ export default {
   methods: {  
 
     async updateTaskTitle (title, id){
-      if(this.tasksStore.id==task.id){
 
         await this.tasksStore.updateTitle(title,id);
         await this.tasksStore.fetchTasks();
         this.editButton()
-      }
+      
 
     },
-    editButton() {
+    editButton(taskId) {
+        this.taskId= taskId
         this.inputField = !this.inputField
     },
 
