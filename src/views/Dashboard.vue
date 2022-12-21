@@ -1,7 +1,7 @@
 <template>
 
   <main class="flex min-h-screen">
-    <sidebar class="w-1/4" />
+    <sidebar class="w-1/4 min-w-[300px]" />
     <div  class="w-3/4">
       <navbar />
       <RouterView/>
