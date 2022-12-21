@@ -42,7 +42,7 @@
               type="text"
               placeholder=" something to do"
               v-model="title"
-              class=" h-5/6 w-5/6 border 1 border-grey rounded-lg"/>
+              class=" h-5/6 w-5/6 border 1 border-grey rounded-lg p-1"/>
             <button
               type="submit"
               class="mt-3 w-5/6 rounded-md text-s text-slate-300 group bg-sky-900 shadow-xl">
