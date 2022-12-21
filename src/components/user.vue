@@ -1,6 +1,6 @@
 
   <template>
-      <div class="h-[90vh] text-center  text-sky-900 shadow-xl bg-slate-300 group">
+      <div class="h-[95vh] text-center  text-sky-900 shadow-xl bg-slate-300 group">
         
         <div class="text-2xl text-center text-sky-900 bg-slate-300">
           <!-- <img src="../../src/icons/done-icon.svg" alt="clockIcon" class="w-5 ml-1"> -->

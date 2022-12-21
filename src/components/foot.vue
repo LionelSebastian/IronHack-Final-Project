@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[40px] bg-slate-200 flex justify-center">
+  <div class="h-[5vh] bg-slate-200 flex justify-center">
     <div class="text-center text-slate-400 text-sm pt-2 italic">"{{ quote }}"</div>
     <div class="w-4"></div>
     <div class="text-center text-slate-400 text-sm pt-2 font-bold">{{ author }}</div>
