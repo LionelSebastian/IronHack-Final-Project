@@ -28,22 +28,21 @@
         </tr>
       </thead>
 
-      <tbody class="">
-        <th class="">
-          <div v-for="task in tasksStore.tasks" class="min-w-1/3 h-auto my-5 text-base text-sky-900">
+      <tbody class="align-top">
+        <th>
+          <div v-for="task in tasksStore.tasks" class="min-w-1/3 my-5 text-base text-sky-900">
             <div
               v-if="task.status == 1"
               class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-100">
               <div class="">
                 {{ task.title }}
               </div>
-              <div class="">
+              <div>
                 <div class="buttons flex justify-center gap-2 mb-2">
-                  <button>
+                  <button @click="editButton">
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                   </button>
-                  <!-- checkToDo -->
                   <button @click="updateCurrent(2, task.id)">
                     <svg class="h-4 w-4 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                   </button>
@@ -60,8 +59,18 @@
                   {{ task.inserted_at.slice(0, 10) }} /
                   {{ task.inserted_at.slice(11, 19) }}
                 </div>
+                
+                  <div v-if="inputField" class="mx-auto flex">
+                    
+                    <input class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
+                    <button>
+                      <svg class="h-4 w-4 mt-3 ml-[-55px]
+                       text-black"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="12" y1="8" x2="8" y2="12" />  <line x1="12" y1="8" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
+                    </button>
+                  </div>
+                
               </div>
-            </div>
+              </div>
           </div>
         </th>
 
@@ -141,6 +150,7 @@ import tasksStore from "../stores/tasks";
 export default {
   data() {
     return {
+      inputField: false,
       user_id: null,
       title: null,
       status: "1",
@@ -154,6 +164,9 @@ export default {
   },
 
   methods: {  
+    editButton() {
+        this.inputField = true
+    },
 
 
     async updateCurrent(status, id) {
@@ -174,6 +187,10 @@ export default {
 </script>
 
 <style scoped>
+.displayInput{
+  display: block !important;
+}
+
 .tableHead {
   position: relative;
 }
