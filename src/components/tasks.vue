@@ -9,19 +9,19 @@
           <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900  shadow-xl">
           <div clas="flex tableHead"> 
           <span>🕥</span>
-            <span class="font-normal"> • TO DO • </span>
+            <span class="font-normal mr-4"> • TO DO • </span>
           </div>
           </th>
           <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
           <div clas="flex tableHead">
           <span>⚙</span>
-            <span class="font-normal"> • ACTIVE • </span>
+            <span class="font-normal mr-4"> • ACTIVE • </span>
           </div>
           </th>
           <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
           <div clas="flex tableHead"> 
             <span>🏁</span>
-            <span class="font-normal"> • DONE • </span>
+            <span class="font-normal mr-4"> • DONE • </span>
           </div>
           </th>
         </tr>
