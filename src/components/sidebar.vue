@@ -14,7 +14,7 @@
         <section>    
           <tasksData/>
         </section>
-        <img src="../icons/LNDteamSide.png" alt="logoSide" class="w-[200px] ml-14 mt-12">
+        <img src="../icons/LNDteamSide.png" alt="logoSide" class="w-[200px] ml-14 mt-3">
         
         <!-- <section class="py-4">
           <task/>

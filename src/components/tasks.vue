@@ -47,10 +47,10 @@
               <div class="">
                 {{ task.title }}
               </div>
-              <!-- para probar drag a drop -->
               <div class="">
-                {{`Task number: ${task.id} `}}
+                {{ task.description }}
               </div>
+
               <div>
                 <div class="buttons flex justify-center gap-2 mb-2">
                   <button @click="editButton(task.id)">
@@ -121,10 +121,15 @@
                     </svg>
                   </button>
                 </div>
-                <div class="text-xs text-slate-500">
+                <div class="flex justify-around">
+                <div class="text-xs font-medium">
                   {{ task.inserted_at.slice(0, 10) }} /
                   {{ task.inserted_at.slice(11, 19) }}
                 </div>
+                <div class="text-xs font-normal">
+                  {{`N.: ${task.id} `}}
+                </div>
+              </div>
                 
                 <transition>
                   <div v-if="this.taskId===task.id" class="mx-auto flex">
@@ -159,10 +164,7 @@
               <div>
                 {{ task.title }}
               </div>
-              <!-- para probar drag a drop -->
-              <div class="">
-                {{`Task number: ${task.id} `}}
-              </div>
+
               <div class="buttons flex justify-center gap-2 mb-2">
                   <button   @click="editButton(task.id)">
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -181,9 +183,14 @@
                     </svg>
                   </button>
                 </div>
-              <div class="text-xs text-slate-500">
-                {{ task.inserted_at.slice(0, 10) }} /
-                {{ task.inserted_at.slice(11, 19) }}
+                <div class="flex justify-around">
+                <div class="text-xs font-medium">
+                  {{ task.inserted_at.slice(0, 10) }} /
+                  {{ task.inserted_at.slice(11, 19) }}
+                </div>
+                <div class="text-xs font-normal">
+                  {{`N.: ${task.id} `}}
+                </div>
               </div>
               <transition>
                   <div v-if="this.taskId===task.id" class="mx-auto flex">
@@ -217,9 +224,7 @@
                 {{ task.title }}
               </div>
               <!-- para probar drag a drop -->
-              <div class="">
-                {{`Task number: ${task.id} `}}
-              </div>
+
               <div class="buttons flex justify-center gap-2 mb-2">
                   <button   @click="editButton(task.id)">
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -233,9 +238,14 @@
                     </svg>
                   </button>
                 </div>
-              <div class="text-xs text-slate-500">
-                {{ task.inserted_at.slice(0, 10) }} /
-                {{ task.inserted_at.slice(11, 19) }}
+              <div class="flex justify-around">
+                <div class="text-xs font-medium">
+                  {{ task.inserted_at.slice(0, 10) }} /
+                  {{ task.inserted_at.slice(11, 19) }}
+                </div>
+                <div class="text-xs font-normal">
+                  {{`N.: ${task.id} `}}
+                </div>
               </div>
               <transition>
                   <div v-if="this.taskId===task.id" class="mx-auto flex">
@@ -267,6 +277,7 @@ export default {
       inputField: false,
       user_id: null,
       title: null,
+      description: null,
       status: "1",
     };
   },
