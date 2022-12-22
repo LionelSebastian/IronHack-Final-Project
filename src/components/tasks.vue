@@ -28,13 +28,17 @@
       </thead>
 
       <tbody class="align-top">
-        <th>
+        <th 
+        @drop="onDrop($event, 1)"
+        @dragenter.prevent
+        @dragover.prevent
+        >
           <div
             v-for="task in tasksStore.tasks"
             :key=task.id
             class="min-w-1/3 my-5 text-base text-sky-900"
             draggable="true"
-            @dragstart="startDrag($event, task.id)"
+            @dragstart="startDrag($event, task)"
           >
             <div
               v-if="task.status == 1"
@@ -137,12 +141,16 @@
           </div>
         </th>
 
-        <th>
+        <th
+        @drop="onDrop($event, 2)"
+        @dragenter.prevent
+        @dragover.prevent
+        >
           <div
             v-for="task in tasksStore.tasks"
             class="min-w-1/3 my-5 text-base text-sky-900"
             draggable="true"
-            @dragstart="startDrag($event, task.id)"
+            @dragstart="startDrag($event, task)"
           >
             <div
               v-if="task.status == 2"
@@ -190,12 +198,16 @@
           </div>
         </th>
 
-        <th>
+        <th
+        @drop="onDrop($event, 3)"
+        @dragenter.prevent
+        @dragover.prevent
+        >
           <div
             v-for="task in tasksStore.tasks"
             class="min-w-1/3 my-5 text-base text-sky-900"
             draggable="true"
-            @dragstart="startDrag($event, task.id)"
+            @dragstart="startDrag($event, task)"
           >
             <div
               v-if="task.status == 3"
@@ -295,8 +307,7 @@ export default {
 
     onDrop(event, status) {
       const taskID = event.dataTransfer.getData("taskID");
-      const task = this.tasks.find((task) => task.id == taskID);
-      task.status = status;
+      this.updateCurrent(status, taskID)
     },
   },
 
