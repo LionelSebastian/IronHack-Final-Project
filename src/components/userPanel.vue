@@ -1,5 +1,5 @@
 <template>
-       <section class="flex mx-5 mt-10"> 
+       <section class="flex mx-5 mt-5"> 
           <div class="">
             
             <div class="pb-2">      
@@ -37,11 +37,17 @@
 
       <section class="">
         <div class="">
+        <h1 class=" ml-6 mb-[-20px] mt-10 text-sky-900 opacity-50">≥ADD NEW TASK</h1>
           <form class=" py-7 mx-5 w-[315px]" @submit.prevent="createNew()">
             <textarea
               type="text"
-              placeholder=" something to do"
+              placeholder="title"
               v-model="title"
+              class=" h-9 w-5/6 border 1 border-grey rounded-lg p-1"/>
+              <textarea
+              type="text"
+              placeholder="description"
+              v-model="description"
               class=" h-5/6 w-5/6 border 1 border-grey rounded-lg p-1"/>
             <button
               type="submit"
@@ -65,6 +71,7 @@
     return {
       user_id: null,
       title: null,
+      description: null,
       status: "1",
       array: [],
     };
@@ -80,12 +87,13 @@
       await this.tasksStore.createTask(
         this.userStore.user.id,
         this.title,
-        this.status,
-        this.timeTask
+        this.description,
+        this.status
       );
       this.title=""
       await this.tasksStore.fetchTasks();
       this.$router.push({ name: "Tasks" }); 
+      this.description=""
     },
   },
  };

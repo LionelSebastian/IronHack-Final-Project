@@ -1,27 +1,27 @@
 <template>
-  <div class="h-[95vh] overflow-y-auto pt-5 text-center text-sky-900 shadow-xl bg-slate-300 group">  
-    <h1 class="text-2xl text-center text-sky-900 bg-slate-300">
-        Tasks
+  <div class="h-[95vh] ml-[-15px] overflow-y-auto pt-5 text-center text-sky-900 shadow-xl bg-slate-300 group">  
+    <h1 class="text-5xl text-left ml-[60px] mb-[-20px] text-sky-900 opacity-10 bg-slate-300">
+      ≥TASKS
     </h1>
-    <table class="tableWidth py-2 px-10 bg-slate-300 group space-x-6 border-separate border-spacing-6">
+    <table class="tableWidth py-2 px-5 bg-slate-300 group border-separate border-spacing-6">
       <thead class="">
         <tr>
-          <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900  shadow-xl">
+          <th class="max-w-1/3 min-w-[300px] rounded-lg text-slate-300 group bg-sky-900  shadow-xl">
           <div clas="flex tableHead"> 
           <span>🕥</span>
-            <span class="font-normal"> • TO DO • </span>
+            <span class="font-normal mr-4"> • TO DO • </span>
           </div>
           </th>
-          <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+          <th class="max-w-1/3 min-w-[300px] rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
           <div clas="flex tableHead">
           <span>⚙</span>
-            <span class="font-normal"> • ACTIVE • </span>
+            <span class="font-normal mr-4"> • ACTIVE • </span>
           </div>
           </th>
-          <th class="max-w-1/3 min-w-[300px] h-auto py-2 px-2 rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
+          <th class="max-w-1/3 min-w-[300px] rounded-lg text-slate-300 group bg-sky-900 shadow-xl">
           <div clas="flex tableHead"> 
             <span>🏁</span>
-            <span class="font-normal"> • DONE • </span>
+            <span class="font-normal mr-4"> • DONE • </span>
           </div>
           </th>
         </tr>
@@ -47,10 +47,10 @@
               <div class="">
                 {{ task.title }}
               </div>
-              <!-- para probar drag a drop -->
               <div class="">
-                {{`Task Nº: ${task.id} `}}
+                {{ task.description }}
               </div>
+
               <div>
                 <div class="buttons flex justify-center gap-2 mb-2">
                   <button @click="editButton(task.id)">
@@ -121,10 +121,15 @@
                     </svg>
                   </button>
                 </div>
-                <div class="text-xs text-slate-500">
+                <div class="flex justify-around">
+                <div class="text-xs font-medium">
                   {{ task.inserted_at.slice(0, 10) }} /
                   {{ task.inserted_at.slice(11, 19) }}
                 </div>
+                <div class="text-xs font-normal">
+                  {{`N.: ${task.id} `}}
+                </div>
+              </div>
                 
                 <transition>
                   <div v-if="this.taskId===task.id" class="mx-auto flex">
@@ -159,10 +164,7 @@
               <div>
                 {{ task.title }}
               </div>
-              <!-- para probar drag a drop -->
-              <div class="">
-                {{`Task number: ${task.id} `}}
-              </div>
+
               <div class="buttons flex justify-center gap-2 mb-2">
                   <button   @click="editButton(task.id)">
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -181,9 +183,14 @@
                     </svg>
                   </button>
                 </div>
-              <div class="text-xs text-slate-500">
-                {{ task.inserted_at.slice(0, 10) }} /
-                {{ task.inserted_at.slice(11, 19) }}
+                <div class="flex justify-around">
+                <div class="text-xs font-medium">
+                  {{ task.inserted_at.slice(0, 10) }} /
+                  {{ task.inserted_at.slice(11, 19) }}
+                </div>
+                <div class="text-xs font-normal">
+                  {{`N.: ${task.id} `}}
+                </div>
               </div>
               <transition>
                   <div v-if="this.taskId===task.id" class="mx-auto flex">
@@ -217,9 +224,7 @@
                 {{ task.title }}
               </div>
               <!-- para probar drag a drop -->
-              <div class="">
-                {{`Task number: ${task.id} `}}
-              </div>
+
               <div class="buttons flex justify-center gap-2 mb-2">
                   <button   @click="editButton(task.id)">
                     <svg class="h-4 w-4 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -233,9 +238,14 @@
                     </svg>
                   </button>
                 </div>
-              <div class="text-xs text-slate-500">
-                {{ task.inserted_at.slice(0, 10) }} /
-                {{ task.inserted_at.slice(11, 19) }}
+              <div class="flex justify-around">
+                <div class="text-xs font-medium">
+                  {{ task.inserted_at.slice(0, 10) }} /
+                  {{ task.inserted_at.slice(11, 19) }}
+                </div>
+                <div class="text-xs font-normal">
+                  {{`N.: ${task.id} `}}
+                </div>
               </div>
               <transition>
                   <div v-if="this.taskId===task.id" class="mx-auto flex">
@@ -267,6 +277,7 @@ export default {
       inputField: false,
       user_id: null,
       title: null,
+      description: null,
       status: "1",
     };
   },
