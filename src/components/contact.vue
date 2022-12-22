@@ -1,9 +1,9 @@
 <template>
   <div class="h-[95vh] py-5 bg-slate-300 flex flex-col items-center">
     <div class="form w-5/6">
-      <h1 class="mb-10 text-2xl text-center text-sky-900">
-        Contact Us
-      </h1>
+      <h1 class="text-5xl mx-auto w-[500px] pl-20 mt-3 mb-[30px] text-sky-900 opacity-10 bg-slate-300">
+    ≥CONTACT US
+    </h1>
       
       <form
         name="myForm"

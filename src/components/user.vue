@@ -2,7 +2,7 @@
   <template>
     <div class="h-[95vh] py-5 text-center text-sky-900 shadow-xl bg-slate-300 group">
 
-      <h1 class="text-5xl mx-auto mb-[80px] text-sky-900 opacity-10 bg-slate-300">≥USER DATA{{ userStore.user.name}}</h1>  
+      <h1 class="text-5xl mx-auto mt-4 mb-[80px] text-sky-900 opacity-10 bg-slate-300">≥USER DATA{{ userStore.user.name}}</h1>  
 
       <div class="my-5 flex flex-wrap justify-center items-center gap-4">
         <input
