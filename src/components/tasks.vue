@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[95vh] overflow-y-auto py-5 text-center text-sky-900 shadow-xl bg-slate-300 group">  
+  <div class="h-[95vh] overflow-y-auto pt-5 text-center text-sky-900 shadow-xl bg-slate-300 group">  
     <h1 class="text-2xl text-center text-sky-900 bg-slate-300">
         Tasks
     </h1>
@@ -28,7 +28,7 @@
       </thead>
 
       <tbody class="align-top">
-        <th 
+        <th class="pb-40"
         @drop="onDrop($event, 1)"
         @dragenter.prevent
         @dragover.prevent
@@ -49,7 +49,7 @@
               </div>
               <!-- para probar drag a drop -->
               <div class="">
-                {{`Task number: ${task.id} `}}
+                {{`Task Nº: ${task.id} `}}
               </div>
               <div>
                 <div class="buttons flex justify-center gap-2 mb-2">
@@ -141,7 +141,7 @@
           </div>
         </th>
 
-        <th
+        <th  class="pb-40"
         @drop="onDrop($event, 2)"
         @dragenter.prevent
         @dragover.prevent
@@ -198,7 +198,7 @@
           </div>
         </th>
 
-        <th
+        <th class="pb-40"
         @drop="onDrop($event, 3)"
         @dragenter.prevent
         @dragover.prevent
