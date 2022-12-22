@@ -42,12 +42,12 @@
           >
             <div
               v-if="task.status == 1"
-              class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-3 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-100"
+              class="max-w-1/3 min-w-[300px] h-auto pt-1 pb-9 px-2 rounded-xl group space-y-3 bg-white bg-opacity-50 shadow-xl hover:bg-slate-100"
             >
               <div class="">
                 {{ task.title }}
               </div>
-              <div class="">
+              <div class="font-normal text-xs mx-4">
                 {{ task.description }}
               </div>
 
@@ -132,10 +132,12 @@
               </div>
                 
                 <transition>
-                  <div v-if="this.taskId===task.id" class="mx-auto flex">
-                      <input v-model="task.title" class="displayInput mx-auto mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
-                      <button @click="updateTaskTitle(task.title,task.id)">
-                        <svg class="h-4 w-4 mt-3 ml-[-55px]
+                  <div v-if="this.taskId===task.id" class="mx-auto flex flex-col mb-[-20px]">
+                      <input v-model="task.title" class="displayInput max-w-[350px] mx-2 h-[30px] mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
+                      <input v-model="task.description" class="displayInput  w-[220px] max-w-[350px] mx-2 h-[30px] mt-3 text-sm font-light pl-2 rounded-md" type="text" v-show="message" placeholder="edit me">
+
+                      <button @click="updateTaskTitle(task.title,task.id, task.description)" class="">
+                        <svg class="h-4 w-4 ml-[245px] mt-[-20px]
                         text-black"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="12" y1="8" x2="8" y2="12" />  <line x1="12" y1="8" x2="12" y2="16" />  <line x1="16" y1="12" x2="12" y2="8" /></svg>
                       </button>
                   </div>
@@ -163,6 +165,9 @@
             >
               <div>
                 {{ task.title }}
+              </div>
+              <div class="font-normal text-xs mx-4">
+                {{ task.description }}
               </div>
 
               <div class="buttons flex justify-center gap-2 mb-2">
@@ -223,7 +228,9 @@
               <div>
                 {{ task.title }}
               </div>
-              <!-- para probar drag a drop -->
+              <div class="font-normal text-xs mx-4">
+                {{ task.description }}
+              </div>
 
               <div class="buttons flex justify-center gap-2 mb-2">
                   <button   @click="editButton(task.id)">
@@ -289,8 +296,8 @@ export default {
   },
 
   methods: {
-    async updateTaskTitle(title, id) {
-      await this.tasksStore.updateTitle(title, id);
+    async updateTaskTitle(title, id, description) {
+      await this.tasksStore.updateTitle(title, id, description);
       await this.tasksStore.fetchTasks();
       this.editButton();
     },

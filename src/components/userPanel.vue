@@ -37,7 +37,7 @@
 
       <section class="">
         <div class="">
-        <h1 class=" ml-6 mb-[-20px] mt-10 text-sky-900 opacity-50">≥ADD NEW TASK</h1>
+        <h1 class=" ml-6 mb-[-20px] mt-10 text-sky-900 opacity-50">≥ ADD NEW TASK</h1>
           <form class=" py-7 mx-5 w-[315px]" @submit.prevent="createNew()">
             <textarea
               type="text"
