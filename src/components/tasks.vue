@@ -1,7 +1,7 @@
 <template>
   <div class="h-[95vh] ml-[-15px] overflow-y-auto py-5 text-center text-sky-900 shadow-xl bg-slate-300 group">  
-    <h1 class="text-2xl text-center text-sky-900 bg-slate-300">
-        Tasks
+    <h1 class="text-5xl text-left ml-[60px] mb-[-20px] text-sky-900 opacity-10 bg-slate-300">
+      ≥TASKS
     </h1>
     <table class="tableWidth py-2 px-5 bg-slate-300 group border-separate border-spacing-6">
       <thead class="">

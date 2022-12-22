@@ -1,16 +1,12 @@
 <template>
   <div class="h-[95vh] overflow-y-auto py-5 text-center bg-slate-300 border-l-3 border-slate-600">
-    <div class="w-1/3 mx-auto mb-4 flex flex-col items-center">
-      <h1 class="text-2xl text-center text-sky-900 bg-slate-300">
-        Archived tasks
+    <div class="w-3/5 mx-auto mb-4 items-center">
+      <h1 class="text-5xl mx-auto w-[500px] mt-3 mb-[30px] text-sky-900 opacity-10 bg-slate-300">
+      ≥ARCHIVED TASKS
     </h1>
-      <!-- <div
-        class="w-[400px] h-auto my-2 py-2 px-2 rounded-lg text-center text-slate-300 group bg-sky-900 shadow-xl">
-        - • ARCHIVED • -
-      </div> -->
       <div
         v-for="task in tasksStore.getByStatus(4)"
-        class="w-[400px] h-auto bg-white bg-opacity-50 rounded-xl overflow-hidden shadow-lg m-4 pt-3 px-3 pb-1 text-center">
+        class="w-[400px] mx-auto h-auto bg-white bg-opacity-50 rounded-xl overflow-hidden shadow-lg m-4 pt-3 px-3 pb-1 text-center">
         <div v-if="tasksStore.getByStatus(4).length" class="">
           <div class="text-sky-900 font-semibold pb-2">{{ task.title }}</div>
           <div class="text-xs text-slate-500 pb-2">
