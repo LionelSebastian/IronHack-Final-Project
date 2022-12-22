@@ -6,16 +6,18 @@
   <h1 class="text-slate-600">Please Sign up:</h1>
   <form class="mx-auto my-3.5  text-center" @submit.prevent="register()">
     <input
+    required
     type="email"
-    placeholder="insert tu email"
+    placeholder="insert your email *"
     v-model="newUser"
     class="rounded-lg my-1 px-4 bg-slate-200"
     />
     <br />
-    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="password" v-model="newPassword" />
+    <input required class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="password *" v-model="newPassword" />
     <br />
-    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="confirm password" v-model="newPassword2" />
-    <br />    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="text" placeholder="name" v-model="firstName" />
+    <input required class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="confirm password *" v-model="newPassword2" />
+    <br />
+    <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="text" placeholder="name" v-model="firstName" />
     <br />
     <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="text" placeholder="phone number" v-model="phone" />
     <br />
