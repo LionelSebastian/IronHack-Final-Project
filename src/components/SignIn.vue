@@ -14,10 +14,10 @@
       <br />
       <input class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="password" placeholder="password" v-model="password" />
       <br />
-      <button class="rounded-lg w-1/8 my-1 px-4 bg-slate-200" type="submit">ENTER</button>
+      <button class="rounded-lg w-1/8 my-1 px-4 text-slate-600 bg-slate-200" type="submit">ENTER</button>
     </form>
     <div>
-    <RouterLink to="/signup" clas="mb-3.5 cursor-pointer class">Sing up for free<Input:c></Input:c></RouterLink>
+    <RouterLink to="/signup" class="text-slate-600 mb-3.5 cursor-pointer">Sing up for free</RouterLink>
     </div>
 </template>
 
